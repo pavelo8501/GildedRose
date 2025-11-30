@@ -1,4 +1,4 @@
-package com.gildedrose
+package po.gildedrose
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test

@@ -1,4 +1,4 @@
-package com.gildedrose
+package po.gildedrose
 
 class GildedRose(val items: List<Item>) {
 

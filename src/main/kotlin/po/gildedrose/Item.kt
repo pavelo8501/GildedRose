@@ -1,5 +1,9 @@
-package com.gildedrose
+package po.gildedrose
 
+import kotlinx.serialization.Serializable
+
+
+@Serializable
 open class Item(
     var name: String,
     var sellIn: Int,
