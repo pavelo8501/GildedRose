@@ -1,7 +1,6 @@
 package po.gildedrose.refactor.application
 
 import po.gildedrose.GildedRose
-import po.gildedrose.main
 import po.gildedrose.refactor.ItemGroup
 import po.gildedrose.refactor.item.GRItem
 import po.gildedrose.refactor.item.toGRItems
@@ -16,8 +15,6 @@ class GildedRoseBuilderTest : GildedTestBase(){
 
     @Test
     fun `GildedRoseBuilder usage test`(){
-
-
         val app = GildedRose<GRItem>(originalItemList.toGRItems()){
             includeToReport{item->
                 item.itemGroup == ItemGroup.BackstagePasses && item.id == 6L
@@ -32,8 +29,6 @@ class GildedRoseBuilderTest : GildedTestBase(){
         val report = app.collectReport()
         report.output()
         assertEquals(2, report.size)
-
-        main(arrayOf("30"))
     }
 
     @Test

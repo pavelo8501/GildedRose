@@ -4,9 +4,7 @@ import po.gildedrose.models.FixtureData
 import po.gildedrose.refactor.item.GRItem
 import po.gildedrose.refactor.item.ItemRecord
 import po.gildedrose.refactor.item.toGRItems
-import po.misc.types.token.TypeToken
 import po.misc.types.token.isSubclassOf
-import kotlin.reflect.full.isSubclassOf
 
 
 private fun  runMain(
@@ -14,12 +12,7 @@ private fun  runMain(
     useItems: List<ItemRecord>?,
     onCalculated: ((FixtureData)-> Unit)?){
 
-
-    val printout = onCalculated == null
-
-    if(printout){
-        println("OMGHAI!")
-    }
+    println("OMGHAI!")
 
     val items= listOf(
         Item("+5 Dexterity Vest", 10, 20), //
@@ -33,53 +26,40 @@ private fun  runMain(
         // this conjured item does not work properly yet
         Item("Conjured Mana Cake", 3, 6)
     )
-
     val app = if (useItems == null){
         GildedRose(items.toGRItems())
     }else{
         GildedRose(useItems)
     }
 
-    val isSubclassItemRecord: Boolean =  app.typeToken.isSubclassOf(ItemRecord::class)
-
     var days = 2
     if (args.size > 0) {
         days = Integer.parseInt(args[0]) + 1
     }
     for (i in 0..days - 1) {
-        if(printout){
-            println("-------- day $i --------")
-            println("name, sellIn, quality")
-        }
+        println("-------- day $i --------")
+        println("name, sellIn, quality")
         for (item in items) {
             onCalculated?.let {
                 val data = FixtureData(day = i, name = item.name, sellIn = item.sellIn, quality = item.quality)
                 it.invoke(data)
             }
-            if(printout){
-                println(item)
-            }
+            println(item)
         }
-        if(printout) {
-            println()
-        }
-        if(isSubclassItemRecord){
-            app.updateQuality(i)
-        }else{
-            app.updateQuality()
-        }
+        println()
+        app.updateQuality(i)
     }
 }
 
 fun main(
-    args: Array<String>,
+    numberOfDays: Int,
     useItems: List<GRItem>,
     onCalculated: ((FixtureData)-> Unit)?
-) = runMain(args, useItems, onCalculated)
+) = runMain(arrayOf(numberOfDays.toString()), useItems, onCalculated)
 
 
-fun main(args: Array<String>, onCalculated: (FixtureData)-> Unit) =
-    runMain(args, useItems = null,  onCalculated = onCalculated)
+fun main(numberOfDays: Int , onCalculated: (FixtureData)-> Unit) =
+    runMain(arrayOf(numberOfDays.toString()), useItems = null,  onCalculated = onCalculated)
 
 fun main(args: Array<String>) = runMain(args, useItems = null,  onCalculated = null)
 

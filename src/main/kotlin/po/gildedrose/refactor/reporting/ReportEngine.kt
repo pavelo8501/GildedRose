@@ -18,7 +18,7 @@ class ReportEngine<T: ItemRecord>(
         byGroupFilter = groupFilter
         byRangeFilter = range
     }
-    
+
     private val reportRecordsBacking = mutableListOf<ReportRecord>()
     val reportRecords : List<ReportRecord> get() = reportRecordsBacking
 
@@ -34,7 +34,6 @@ class ReportEngine<T: ItemRecord>(
         }
         return null
     }
-
     private fun doesFallToGroup(itemGroup: ItemGroup, preciseMatch: Boolean): Boolean{
         val group = byGroupFilter
         if(group == null && !preciseMatch){
@@ -74,7 +73,6 @@ class ReportEngine<T: ItemRecord>(
     fun includeToReport(selector:(T) -> Boolean){
         this.selector = selector
     }
-
     fun processItem(item: T, day: Int, block: (ReportRecord?)-> Unit):ReportRecord? {
         if(processBySelector(item, day) == null){
            val record = processByParameters(item, day)
@@ -84,21 +82,17 @@ class ReportEngine<T: ItemRecord>(
         block.invoke(null)
         return null
     }
-
     fun processItem(item: T, day: Int):ReportRecord? {
-        if(processBySelector(item, day) == null){
-            val record = processByParameters(item, day)
-            return record
+        val reportRecord = processBySelector(item, day)
+        if(reportRecord != null){
+            return reportRecord
         }
-        return null
+        return processByParameters(item, day)
     }
-
     fun processItems(items: List<T>, day: Int): List<ReportRecord> =
         items.mapNotNull { processItem(it, day) }
-
 
     fun clear(){
         reportRecordsBacking.clear()
     }
-
 }

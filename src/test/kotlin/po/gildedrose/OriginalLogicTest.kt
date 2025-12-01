@@ -27,7 +27,7 @@ class OriginalLogicTest : GildedTestBase() {
     @Test
     fun `Creating snapshot from TextFixture`(){
         val resultingList = mutableListOf<FixtureData>()
-        main(arrayOf("30")){
+        main(30){
             resultingList.add(it)
         }
         val jsonSnapshot = jsonParser.encodeToString(resultingList)

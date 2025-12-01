@@ -5,7 +5,6 @@ import po.misc.data.PrettyPrint
 import po.misc.data.pretty_print.grid.buildPrettyGrid
 import po.misc.data.strings.appendGroup
 
-
 class ReportRecord(
     private val item: ItemRecord,
     val day: Int
@@ -27,11 +26,16 @@ class ReportRecord(
             appendGroup('[', ']', ::day, ::itemName, ::qualityFrom, ::qualityTo)
         }
     }
-
     companion object{
         val reportTemplate = buildPrettyGrid<ReportRecord> {
             buildRow{
-                addCells(ReportRecord::day, ReportRecord::itemName, ReportRecord::qualityFrom, ReportRecord::qualityTo)
+                addCells(
+                    ReportRecord::day,
+                    ReportRecord::id,
+                    ReportRecord::itemName,
+                    ReportRecord::qualityFrom,
+                    ReportRecord::qualityTo
+                )
             }
         }
     }

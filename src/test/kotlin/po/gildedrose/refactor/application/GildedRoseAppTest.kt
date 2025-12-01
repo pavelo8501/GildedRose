@@ -7,7 +7,6 @@ import po.gildedrose.main
 import po.gildedrose.models.FixtureData
 import po.gildedrose.refactor.ItemGroup
 import po.gildedrose.refactor.item.GRItem
-import po.gildedrose.refactor.item.differentiateItems
 import po.gildedrose.refactor.item.toGRItems
 import po.gildedrose.setup.GildedTestBase
 import po.misc.collections.asList
@@ -43,7 +42,7 @@ class GildedRoseAppTest : GildedTestBase() {
         val snapshot = loadFixtureSnapshot()
         val fixtureResult = mutableListOf<FixtureData>()
 
-        main(arrayOf("30"), originalItemList.toGRItems()){
+        main(numberOfDays =  30, originalItemList.toGRItems()){
             fixtureResult.add(it)
         }
         assertEquals(snapshot.size, fixtureResult.size)

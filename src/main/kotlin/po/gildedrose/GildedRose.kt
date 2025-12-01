@@ -100,6 +100,16 @@ class GildedRose<T:ItemRecord>(
             }
         }
     }
+
+    private fun processReporting(engine: ReportEngine<T>, day: Int?, item:T): ReportRecord?{
+       return if(day != null){
+           engine.processItem(item, day)
+        }else{
+            "Reporting requested but day parameter not provided".output(Colour.Yellow)
+            null
+        }
+    }
+
     internal fun fallbackDefault(itemGroup: ItemGroup, inputRecord: ItemRecord): ItemRecord {
         "FallbackDefault was used since to condition provided for Group: ${itemGroup.displayName}".output(Colour.Yellow)
         inputRecord.update(inputRecord.sellIn - 1,  inputRecord.quality -1 )
@@ -111,13 +121,11 @@ class GildedRose<T:ItemRecord>(
         for (item in processedItems){
             val condition = usedConditions.firstOrNull{ it.itemGroup == item.itemGroup }
             if(condition != null){
-                if(day != null){
-                    reports.forEach {engine->
-                        engine.processItem(item, day){record->
-                            condition.update(item)
-                            record?.provideResult(item.quality)
-                        }
-                       // engine.processItem(item, day)
+                if(reports.isNotEmpty()){
+                   val reportRecords = reports.mapNotNull{reportEngine-> processReporting(reportEngine, day, item)  }
+                    condition.update(item)
+                    reportRecords.forEach {reportRecord->
+                        reportRecord.provideResult(item.quality)
                     }
                 }else{
                     condition.update(item)
@@ -150,7 +158,6 @@ class GildedRose<T:ItemRecord>(
                 GildedRose(TypeToken.create<T>(), items)
             }
         }
-
         inline operator fun <reified T:ItemRecord> invoke(
             items: List<T>,
             noinline builderAction: GildedRoseBuilder<T>.()-> Unit,
@@ -161,7 +168,6 @@ class GildedRose<T:ItemRecord>(
             app.resolveConfig(builder)
            return app
         }
-
     }
 }
 

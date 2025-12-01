@@ -16,5 +16,4 @@ interface ItemRecord {
     fun update(sellIn: Int, quality: Quality){
         update(sellIn, quality.value)
     }
-
 }

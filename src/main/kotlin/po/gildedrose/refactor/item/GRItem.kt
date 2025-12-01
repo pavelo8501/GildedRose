@@ -77,7 +77,6 @@ class GRItem(
             appendGroup('[', ']', ::id, ::name, ::quality, ::sellIn)
         }
     }
-
     companion object{
         /**
          * Wraps the given [ItemRecord] into a [GRItem].
@@ -100,7 +99,6 @@ class GRItem(
         }
     }
 }
-
 
 fun Item.toGRItem(): GRItem = GRItem(this)
 
