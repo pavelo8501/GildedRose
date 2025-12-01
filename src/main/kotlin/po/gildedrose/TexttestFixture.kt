@@ -1,9 +1,18 @@
 package po.gildedrose
 
 import po.gildedrose.models.FixtureData
+import po.gildedrose.refactor.ItemGroup
+import po.gildedrose.refactor.conditions.UpdateCondition
+import po.gildedrose.refactor.item.GRItem
+import po.gildedrose.refactor.item.ItemRecord
+import po.gildedrose.refactor.item.toGRItems
+import java.util.concurrent.locks.Condition
 
 
-fun main(args: Array<String>, onCalculated: ((FixtureData)-> Unit)?){
+private fun runMain(
+    args: Array<String>,
+    useItems: List<ItemRecord>?,
+    onCalculated: ((FixtureData)-> Unit)?){
 
     val printout = onCalculated == null
 
@@ -11,7 +20,7 @@ fun main(args: Array<String>, onCalculated: ((FixtureData)-> Unit)?){
         println("OMGHAI!")
     }
 
-    val items = listOf(
+    val items= listOf(
         Item("+5 Dexterity Vest", 10, 20), //
         Item("Aged Brie", 2, 0), //
         Item("Elixir of the Mongoose", 5, 7), //
@@ -24,7 +33,11 @@ fun main(args: Array<String>, onCalculated: ((FixtureData)-> Unit)?){
         Item("Conjured Mana Cake", 3, 6)
     )
 
-    val app = GildedRose(items)
+    val app = if (useItems == null){
+        GildedRose(items.toGRItems())
+    }else{
+        GildedRose(useItems)
+    }
 
     var days = 2
     if (args.size > 0) {
@@ -47,11 +60,21 @@ fun main(args: Array<String>, onCalculated: ((FixtureData)-> Unit)?){
         if(printout) {
             println()
         }
-        app.updateQuality()
+        app.updateQualityLegacy()
     }
 }
 
-fun main(args: Array<String>) = main(args, onCalculated = null)
+fun main(
+    args: Array<String>,
+    useItems: List<GRItem>,
+    onCalculated: ((FixtureData)-> Unit)?
+) = runMain(args, useItems, onCalculated)
+
+
+fun main(args: Array<String>, onCalculated: (FixtureData)-> Unit) =
+    runMain(args, useItems = null,  onCalculated = onCalculated)
+
+fun main(args: Array<String>) = runMain(args, useItems = null,  onCalculated = null)
 
 
 
