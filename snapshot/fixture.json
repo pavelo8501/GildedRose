@@ -1,0 +1,1676 @@
+[
+    {
+        "Day": 0,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": 10,
+        "Quality": 20
+    },
+    {
+        "Day": 0,
+        "Name": "Aged Brie",
+        "SellIn": 2,
+        "Quality": 0
+    },
+    {
+        "Day": 0,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": 5,
+        "Quality": 7
+    },
+    {
+        "Day": 0,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 0,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 0,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 15,
+        "Quality": 20
+    },
+    {
+        "Day": 0,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 10,
+        "Quality": 49
+    },
+    {
+        "Day": 0,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 5,
+        "Quality": 49
+    },
+    {
+        "Day": 0,
+        "Name": "Conjured Mana Cake",
+        "SellIn": 3,
+        "Quality": 6
+    },
+    {
+        "Day": 1,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": 9,
+        "Quality": 19
+    },
+    {
+        "Day": 1,
+        "Name": "Aged Brie",
+        "SellIn": 1,
+        "Quality": 1
+    },
+    {
+        "Day": 1,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": 4,
+        "Quality": 6
+    },
+    {
+        "Day": 1,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 1,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 1,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 14,
+        "Quality": 21
+    },
+    {
+        "Day": 1,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 9,
+        "Quality": 50
+    },
+    {
+        "Day": 1,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 4,
+        "Quality": 50
+    },
+    {
+        "Day": 1,
+        "Name": "Conjured Mana Cake",
+        "SellIn": 2,
+        "Quality": 5
+    },
+    {
+        "Day": 2,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": 8,
+        "Quality": 18
+    },
+    {
+        "Day": 2,
+        "Name": "Aged Brie",
+        "SellIn": 0,
+        "Quality": 2
+    },
+    {
+        "Day": 2,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": 3,
+        "Quality": 5
+    },
+    {
+        "Day": 2,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 2,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 2,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 13,
+        "Quality": 22
+    },
+    {
+        "Day": 2,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 8,
+        "Quality": 50
+    },
+    {
+        "Day": 2,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 3,
+        "Quality": 50
+    },
+    {
+        "Day": 2,
+        "Name": "Conjured Mana Cake",
+        "SellIn": 1,
+        "Quality": 4
+    },
+    {
+        "Day": 3,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": 7,
+        "Quality": 17
+    },
+    {
+        "Day": 3,
+        "Name": "Aged Brie",
+        "SellIn": -1,
+        "Quality": 4
+    },
+    {
+        "Day": 3,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": 2,
+        "Quality": 4
+    },
+    {
+        "Day": 3,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 3,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 3,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 12,
+        "Quality": 23
+    },
+    {
+        "Day": 3,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 7,
+        "Quality": 50
+    },
+    {
+        "Day": 3,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 2,
+        "Quality": 50
+    },
+    {
+        "Day": 3,
+        "Name": "Conjured Mana Cake",
+        "SellIn": 0,
+        "Quality": 3
+    },
+    {
+        "Day": 4,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": 6,
+        "Quality": 16
+    },
+    {
+        "Day": 4,
+        "Name": "Aged Brie",
+        "SellIn": -2,
+        "Quality": 6
+    },
+    {
+        "Day": 4,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": 1,
+        "Quality": 3
+    },
+    {
+        "Day": 4,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 4,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 4,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 11,
+        "Quality": 24
+    },
+    {
+        "Day": 4,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 6,
+        "Quality": 50
+    },
+    {
+        "Day": 4,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 1,
+        "Quality": 50
+    },
+    {
+        "Day": 4,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -1,
+        "Quality": 1
+    },
+    {
+        "Day": 5,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": 5,
+        "Quality": 15
+    },
+    {
+        "Day": 5,
+        "Name": "Aged Brie",
+        "SellIn": -3,
+        "Quality": 8
+    },
+    {
+        "Day": 5,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": 0,
+        "Quality": 2
+    },
+    {
+        "Day": 5,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 5,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 5,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 10,
+        "Quality": 25
+    },
+    {
+        "Day": 5,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 5,
+        "Quality": 50
+    },
+    {
+        "Day": 5,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 0,
+        "Quality": 50
+    },
+    {
+        "Day": 5,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -2,
+        "Quality": 0
+    },
+    {
+        "Day": 6,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": 4,
+        "Quality": 14
+    },
+    {
+        "Day": 6,
+        "Name": "Aged Brie",
+        "SellIn": -4,
+        "Quality": 10
+    },
+    {
+        "Day": 6,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -1,
+        "Quality": 0
+    },
+    {
+        "Day": 6,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 6,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 6,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 9,
+        "Quality": 27
+    },
+    {
+        "Day": 6,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 4,
+        "Quality": 50
+    },
+    {
+        "Day": 6,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -1,
+        "Quality": 0
+    },
+    {
+        "Day": 6,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -3,
+        "Quality": 0
+    },
+    {
+        "Day": 7,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": 3,
+        "Quality": 13
+    },
+    {
+        "Day": 7,
+        "Name": "Aged Brie",
+        "SellIn": -5,
+        "Quality": 12
+    },
+    {
+        "Day": 7,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -2,
+        "Quality": 0
+    },
+    {
+        "Day": 7,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 7,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 7,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 8,
+        "Quality": 29
+    },
+    {
+        "Day": 7,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 3,
+        "Quality": 50
+    },
+    {
+        "Day": 7,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -2,
+        "Quality": 0
+    },
+    {
+        "Day": 7,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -4,
+        "Quality": 0
+    },
+    {
+        "Day": 8,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": 2,
+        "Quality": 12
+    },
+    {
+        "Day": 8,
+        "Name": "Aged Brie",
+        "SellIn": -6,
+        "Quality": 14
+    },
+    {
+        "Day": 8,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -3,
+        "Quality": 0
+    },
+    {
+        "Day": 8,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 8,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 8,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 7,
+        "Quality": 31
+    },
+    {
+        "Day": 8,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 2,
+        "Quality": 50
+    },
+    {
+        "Day": 8,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -3,
+        "Quality": 0
+    },
+    {
+        "Day": 8,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -5,
+        "Quality": 0
+    },
+    {
+        "Day": 9,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": 1,
+        "Quality": 11
+    },
+    {
+        "Day": 9,
+        "Name": "Aged Brie",
+        "SellIn": -7,
+        "Quality": 16
+    },
+    {
+        "Day": 9,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -4,
+        "Quality": 0
+    },
+    {
+        "Day": 9,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 9,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 9,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 6,
+        "Quality": 33
+    },
+    {
+        "Day": 9,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 1,
+        "Quality": 50
+    },
+    {
+        "Day": 9,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -4,
+        "Quality": 0
+    },
+    {
+        "Day": 9,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -6,
+        "Quality": 0
+    },
+    {
+        "Day": 10,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": 0,
+        "Quality": 10
+    },
+    {
+        "Day": 10,
+        "Name": "Aged Brie",
+        "SellIn": -8,
+        "Quality": 18
+    },
+    {
+        "Day": 10,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -5,
+        "Quality": 0
+    },
+    {
+        "Day": 10,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 10,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 10,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 5,
+        "Quality": 35
+    },
+    {
+        "Day": 10,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 0,
+        "Quality": 50
+    },
+    {
+        "Day": 10,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -5,
+        "Quality": 0
+    },
+    {
+        "Day": 10,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -7,
+        "Quality": 0
+    },
+    {
+        "Day": 11,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": -1,
+        "Quality": 8
+    },
+    {
+        "Day": 11,
+        "Name": "Aged Brie",
+        "SellIn": -9,
+        "Quality": 20
+    },
+    {
+        "Day": 11,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -6,
+        "Quality": 0
+    },
+    {
+        "Day": 11,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 11,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 11,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 4,
+        "Quality": 38
+    },
+    {
+        "Day": 11,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -1,
+        "Quality": 0
+    },
+    {
+        "Day": 11,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -6,
+        "Quality": 0
+    },
+    {
+        "Day": 11,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -8,
+        "Quality": 0
+    },
+    {
+        "Day": 12,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": -2,
+        "Quality": 6
+    },
+    {
+        "Day": 12,
+        "Name": "Aged Brie",
+        "SellIn": -10,
+        "Quality": 22
+    },
+    {
+        "Day": 12,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -7,
+        "Quality": 0
+    },
+    {
+        "Day": 12,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 12,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 12,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 3,
+        "Quality": 41
+    },
+    {
+        "Day": 12,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -2,
+        "Quality": 0
+    },
+    {
+        "Day": 12,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -7,
+        "Quality": 0
+    },
+    {
+        "Day": 12,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -9,
+        "Quality": 0
+    },
+    {
+        "Day": 13,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": -3,
+        "Quality": 4
+    },
+    {
+        "Day": 13,
+        "Name": "Aged Brie",
+        "SellIn": -11,
+        "Quality": 24
+    },
+    {
+        "Day": 13,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -8,
+        "Quality": 0
+    },
+    {
+        "Day": 13,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 13,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 13,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 2,
+        "Quality": 44
+    },
+    {
+        "Day": 13,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -3,
+        "Quality": 0
+    },
+    {
+        "Day": 13,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -8,
+        "Quality": 0
+    },
+    {
+        "Day": 13,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -10,
+        "Quality": 0
+    },
+    {
+        "Day": 14,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": -4,
+        "Quality": 2
+    },
+    {
+        "Day": 14,
+        "Name": "Aged Brie",
+        "SellIn": -12,
+        "Quality": 26
+    },
+    {
+        "Day": 14,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -9,
+        "Quality": 0
+    },
+    {
+        "Day": 14,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 14,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 14,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 1,
+        "Quality": 47
+    },
+    {
+        "Day": 14,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -4,
+        "Quality": 0
+    },
+    {
+        "Day": 14,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -9,
+        "Quality": 0
+    },
+    {
+        "Day": 14,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -11,
+        "Quality": 0
+    },
+    {
+        "Day": 15,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": -5,
+        "Quality": 0
+    },
+    {
+        "Day": 15,
+        "Name": "Aged Brie",
+        "SellIn": -13,
+        "Quality": 28
+    },
+    {
+        "Day": 15,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -10,
+        "Quality": 0
+    },
+    {
+        "Day": 15,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 15,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 15,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": 0,
+        "Quality": 50
+    },
+    {
+        "Day": 15,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -5,
+        "Quality": 0
+    },
+    {
+        "Day": 15,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -10,
+        "Quality": 0
+    },
+    {
+        "Day": 15,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -12,
+        "Quality": 0
+    },
+    {
+        "Day": 16,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": -6,
+        "Quality": 0
+    },
+    {
+        "Day": 16,
+        "Name": "Aged Brie",
+        "SellIn": -14,
+        "Quality": 30
+    },
+    {
+        "Day": 16,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -11,
+        "Quality": 0
+    },
+    {
+        "Day": 16,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 16,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 16,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -1,
+        "Quality": 0
+    },
+    {
+        "Day": 16,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -6,
+        "Quality": 0
+    },
+    {
+        "Day": 16,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -11,
+        "Quality": 0
+    },
+    {
+        "Day": 16,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -13,
+        "Quality": 0
+    },
+    {
+        "Day": 17,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": -7,
+        "Quality": 0
+    },
+    {
+        "Day": 17,
+        "Name": "Aged Brie",
+        "SellIn": -15,
+        "Quality": 32
+    },
+    {
+        "Day": 17,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -12,
+        "Quality": 0
+    },
+    {
+        "Day": 17,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 17,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 17,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -2,
+        "Quality": 0
+    },
+    {
+        "Day": 17,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -7,
+        "Quality": 0
+    },
+    {
+        "Day": 17,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -12,
+        "Quality": 0
+    },
+    {
+        "Day": 17,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -14,
+        "Quality": 0
+    },
+    {
+        "Day": 18,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": -8,
+        "Quality": 0
+    },
+    {
+        "Day": 18,
+        "Name": "Aged Brie",
+        "SellIn": -16,
+        "Quality": 34
+    },
+    {
+        "Day": 18,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -13,
+        "Quality": 0
+    },
+    {
+        "Day": 18,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 18,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 18,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -3,
+        "Quality": 0
+    },
+    {
+        "Day": 18,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -8,
+        "Quality": 0
+    },
+    {
+        "Day": 18,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -13,
+        "Quality": 0
+    },
+    {
+        "Day": 18,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -15,
+        "Quality": 0
+    },
+    {
+        "Day": 19,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": -9,
+        "Quality": 0
+    },
+    {
+        "Day": 19,
+        "Name": "Aged Brie",
+        "SellIn": -17,
+        "Quality": 36
+    },
+    {
+        "Day": 19,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -14,
+        "Quality": 0
+    },
+    {
+        "Day": 19,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 19,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 19,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -4,
+        "Quality": 0
+    },
+    {
+        "Day": 19,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -9,
+        "Quality": 0
+    },
+    {
+        "Day": 19,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -14,
+        "Quality": 0
+    },
+    {
+        "Day": 19,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -16,
+        "Quality": 0
+    },
+    {
+        "Day": 20,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": -10,
+        "Quality": 0
+    },
+    {
+        "Day": 20,
+        "Name": "Aged Brie",
+        "SellIn": -18,
+        "Quality": 38
+    },
+    {
+        "Day": 20,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -15,
+        "Quality": 0
+    },
+    {
+        "Day": 20,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 20,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 20,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -5,
+        "Quality": 0
+    },
+    {
+        "Day": 20,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -10,
+        "Quality": 0
+    },
+    {
+        "Day": 20,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -15,
+        "Quality": 0
+    },
+    {
+        "Day": 20,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -17,
+        "Quality": 0
+    },
+    {
+        "Day": 21,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": -11,
+        "Quality": 0
+    },
+    {
+        "Day": 21,
+        "Name": "Aged Brie",
+        "SellIn": -19,
+        "Quality": 40
+    },
+    {
+        "Day": 21,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -16,
+        "Quality": 0
+    },
+    {
+        "Day": 21,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 21,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 21,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -6,
+        "Quality": 0
+    },
+    {
+        "Day": 21,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -11,
+        "Quality": 0
+    },
+    {
+        "Day": 21,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -16,
+        "Quality": 0
+    },
+    {
+        "Day": 21,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -18,
+        "Quality": 0
+    },
+    {
+        "Day": 22,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": -12,
+        "Quality": 0
+    },
+    {
+        "Day": 22,
+        "Name": "Aged Brie",
+        "SellIn": -20,
+        "Quality": 42
+    },
+    {
+        "Day": 22,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -17,
+        "Quality": 0
+    },
+    {
+        "Day": 22,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 22,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 22,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -7,
+        "Quality": 0
+    },
+    {
+        "Day": 22,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -12,
+        "Quality": 0
+    },
+    {
+        "Day": 22,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -17,
+        "Quality": 0
+    },
+    {
+        "Day": 22,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -19,
+        "Quality": 0
+    },
+    {
+        "Day": 23,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": -13,
+        "Quality": 0
+    },
+    {
+        "Day": 23,
+        "Name": "Aged Brie",
+        "SellIn": -21,
+        "Quality": 44
+    },
+    {
+        "Day": 23,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -18,
+        "Quality": 0
+    },
+    {
+        "Day": 23,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 23,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 23,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -8,
+        "Quality": 0
+    },
+    {
+        "Day": 23,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -13,
+        "Quality": 0
+    },
+    {
+        "Day": 23,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -18,
+        "Quality": 0
+    },
+    {
+        "Day": 23,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -20,
+        "Quality": 0
+    },
+    {
+        "Day": 24,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": -14,
+        "Quality": 0
+    },
+    {
+        "Day": 24,
+        "Name": "Aged Brie",
+        "SellIn": -22,
+        "Quality": 46
+    },
+    {
+        "Day": 24,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -19,
+        "Quality": 0
+    },
+    {
+        "Day": 24,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 24,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 24,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -9,
+        "Quality": 0
+    },
+    {
+        "Day": 24,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -14,
+        "Quality": 0
+    },
+    {
+        "Day": 24,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -19,
+        "Quality": 0
+    },
+    {
+        "Day": 24,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -21,
+        "Quality": 0
+    },
+    {
+        "Day": 25,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": -15,
+        "Quality": 0
+    },
+    {
+        "Day": 25,
+        "Name": "Aged Brie",
+        "SellIn": -23,
+        "Quality": 48
+    },
+    {
+        "Day": 25,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -20,
+        "Quality": 0
+    },
+    {
+        "Day": 25,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 25,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 25,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -10,
+        "Quality": 0
+    },
+    {
+        "Day": 25,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -15,
+        "Quality": 0
+    },
+    {
+        "Day": 25,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -20,
+        "Quality": 0
+    },
+    {
+        "Day": 25,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -22,
+        "Quality": 0
+    },
+    {
+        "Day": 26,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": -16,
+        "Quality": 0
+    },
+    {
+        "Day": 26,
+        "Name": "Aged Brie",
+        "SellIn": -24,
+        "Quality": 50
+    },
+    {
+        "Day": 26,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -21,
+        "Quality": 0
+    },
+    {
+        "Day": 26,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 26,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 26,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -11,
+        "Quality": 0
+    },
+    {
+        "Day": 26,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -16,
+        "Quality": 0
+    },
+    {
+        "Day": 26,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -21,
+        "Quality": 0
+    },
+    {
+        "Day": 26,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -23,
+        "Quality": 0
+    },
+    {
+        "Day": 27,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": -17,
+        "Quality": 0
+    },
+    {
+        "Day": 27,
+        "Name": "Aged Brie",
+        "SellIn": -25,
+        "Quality": 50
+    },
+    {
+        "Day": 27,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -22,
+        "Quality": 0
+    },
+    {
+        "Day": 27,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 27,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 27,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -12,
+        "Quality": 0
+    },
+    {
+        "Day": 27,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -17,
+        "Quality": 0
+    },
+    {
+        "Day": 27,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -22,
+        "Quality": 0
+    },
+    {
+        "Day": 27,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -24,
+        "Quality": 0
+    },
+    {
+        "Day": 28,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": -18,
+        "Quality": 0
+    },
+    {
+        "Day": 28,
+        "Name": "Aged Brie",
+        "SellIn": -26,
+        "Quality": 50
+    },
+    {
+        "Day": 28,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -23,
+        "Quality": 0
+    },
+    {
+        "Day": 28,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 28,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 28,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -13,
+        "Quality": 0
+    },
+    {
+        "Day": 28,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -18,
+        "Quality": 0
+    },
+    {
+        "Day": 28,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -23,
+        "Quality": 0
+    },
+    {
+        "Day": 28,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -25,
+        "Quality": 0
+    },
+    {
+        "Day": 29,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": -19,
+        "Quality": 0
+    },
+    {
+        "Day": 29,
+        "Name": "Aged Brie",
+        "SellIn": -27,
+        "Quality": 50
+    },
+    {
+        "Day": 29,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -24,
+        "Quality": 0
+    },
+    {
+        "Day": 29,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 29,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 29,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -14,
+        "Quality": 0
+    },
+    {
+        "Day": 29,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -19,
+        "Quality": 0
+    },
+    {
+        "Day": 29,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -24,
+        "Quality": 0
+    },
+    {
+        "Day": 29,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -26,
+        "Quality": 0
+    },
+    {
+        "Day": 30,
+        "Name": "+5 Dexterity Vest",
+        "SellIn": -20,
+        "Quality": 0
+    },
+    {
+        "Day": 30,
+        "Name": "Aged Brie",
+        "SellIn": -28,
+        "Quality": 50
+    },
+    {
+        "Day": 30,
+        "Name": "Elixir of the Mongoose",
+        "SellIn": -25,
+        "Quality": 0
+    },
+    {
+        "Day": 30,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": 0,
+        "Quality": 80
+    },
+    {
+        "Day": 30,
+        "Name": "Sulfuras, Hand of Ragnaros",
+        "SellIn": -1,
+        "Quality": 80
+    },
+    {
+        "Day": 30,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -15,
+        "Quality": 0
+    },
+    {
+        "Day": 30,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -20,
+        "Quality": 0
+    },
+    {
+        "Day": 30,
+        "Name": "Backstage passes to a TAFKAL80ETC concert",
+        "SellIn": -25,
+        "Quality": 0
+    },
+    {
+        "Day": 30,
+        "Name": "Conjured Mana Cake",
+        "SellIn": -27,
+        "Quality": 0
+    }
+]

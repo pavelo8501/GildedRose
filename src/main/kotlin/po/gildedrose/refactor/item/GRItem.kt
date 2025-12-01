@@ -1,8 +1,10 @@
-package po.gildedrose.refactor
+package po.gildedrose.refactor.item
 
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.Transient
 import po.gildedrose.Item
+import po.gildedrose.refactor.ItemGroup
+import po.misc.data.strings.appendGroup
 
 @Serializable
 class GRItem(
@@ -12,26 +14,37 @@ class GRItem(
     private val itemSellIn: Int = 0,
     @Transient
     private val itemQuality: Int = 0,
-    val itemGroup:ItemGroup = ItemGroup.Default
-): Item(itemName, itemSellIn,itemQuality) {
+    override val itemGroup: ItemGroup
+): Item(itemName, itemSellIn,itemQuality), ItemRecord {
 
-   constructor(item: Item):this(item.name, item.quality, item.sellIn, parseNameToGroup(item.name))
+   constructor(item: Item):this(item.name, itemSellIn =  item.sellIn, item.quality, parseNameToGroup(item.name))
 
     companion object{
-        fun parseNameToGroup(name: String):ItemGroup{
+        fun parseNameToGroup(name: String): ItemGroup {
             val group = when{
                 name.contains("Aged Brie") ->  ItemGroup.AgedBrie
                 name.contains("Elixir") -> ItemGroup.Elixir
                 name.contains("Sulfuras")-> ItemGroup.Sulfuras
                 name.contains("Backstage passes") -> ItemGroup.BackstagePasses
+                name.contains("Conjured") -> ItemGroup.Conjured
                 else -> ItemGroup.Default
             }
             return group
+        }
+    }
+
+    override fun update(sellIn: Int, quality: Int){
+        super.sellIn = sellIn
+        super.quality  = quality
+    }
+
+    override fun toString(): String {
+       return buildString {
+            append("GRItem")
+            appendGroup('[', ']', ::name, ::quality, ::sellIn)
         }
     }
 }
 
 fun Item.toGRItem(): GRItem = GRItem(this)
 fun Collection<Item>.toGRItems(): List<GRItem> = map { it.toGRItem() }
-
-
