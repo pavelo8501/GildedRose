@@ -17,7 +17,7 @@ class OriginalLogicTest : GildedTestBase() {
 
     @Test
     fun `Creating snapshot of original list and update logic`(){
-        val app = GildedRose(originalItemList)
+        val app = GildedRose(originalItemList.toGRItems())
         app.updateQualityLegacy()
         val resultingItems =  app.items.map { GRItem(it) }
         val jsonSnapshot = jsonParser.encodeToString(resultingItems)

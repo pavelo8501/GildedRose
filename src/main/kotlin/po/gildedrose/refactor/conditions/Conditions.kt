@@ -4,7 +4,6 @@ import po.gildedrose.refactor.ItemGroup
 import po.gildedrose.refactor.application.clamp
 import po.gildedrose.refactor.item.Quality
 
-
 val normalItemCondition = UpdateCondition(ItemGroup.Default){ record->
     val sellIn = record.sellIn -1
     if(record.sellIn >= 1){
@@ -38,7 +37,6 @@ val agedBrieCondition = UpdateCondition(ItemGroup.AgedBrie){ record->
     val quality = Quality(record.quality  + 1 ).clamp()
     record.update(sellIn, quality)
 }
-
 
 val backStageItemCondition = UpdateCondition(ItemGroup.BackstagePasses){ record->
     val sellIn = record.sellIn -1

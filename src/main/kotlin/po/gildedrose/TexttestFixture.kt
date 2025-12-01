@@ -5,6 +5,7 @@ import po.gildedrose.refactor.ItemGroup
 import po.gildedrose.refactor.conditions.UpdateCondition
 import po.gildedrose.refactor.item.GRItem
 import po.gildedrose.refactor.item.ItemRecord
+import po.gildedrose.refactor.item.toGRItems
 import java.util.concurrent.locks.Condition
 
 
@@ -33,9 +34,9 @@ private fun runMain(
     )
 
     val app = if (useItems == null){
-        GildedRose(items)
+        GildedRose(items.toGRItems())
     }else{
-        GildedRose(useItems, listOf(UpdateCondition(ItemGroup.Default,  {  } )))
+        GildedRose(useItems)
     }
 
     var days = 2

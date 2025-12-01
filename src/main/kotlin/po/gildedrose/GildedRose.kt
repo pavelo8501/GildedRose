@@ -1,22 +1,40 @@
 package po.gildedrose
 
+import po.gildedrose.refactor.ItemGroup
 import po.gildedrose.refactor.application.GildedRoseApp
 import po.gildedrose.refactor.conditions.UpdateCondition
+import po.gildedrose.refactor.conditions.agedBrieCondition
+import po.gildedrose.refactor.conditions.backStageItemCondition
+import po.gildedrose.refactor.conditions.conjuredItemCondition
+import po.gildedrose.refactor.conditions.normalItemCondition
+import po.gildedrose.refactor.conditions.sulfrasItemCondition
 import po.gildedrose.refactor.item.GRItem
 import po.gildedrose.refactor.item.ItemRecord
-import po.gildedrose.refactor.item.toGRItems
+import po.misc.data.output.output
+import po.misc.data.styles.Colour
 
 
-class GildedRose(val items: List<Item>): GildedRoseApp{
+
+class GildedRose(val items: List<ItemRecord>,  conditions: List<UpdateCondition> = emptyList()): GildedRoseApp{
 
 
+//   constructor(itemRecords: List<ItemRecord>,  updateConditions: List<UpdateCondition>):this(items = emptyList(), conditions = updateConditions){
+//       grItems.addAll(itemRecords.toGRItems())
+//   }
+//
     private var grItems = mutableListOf<GRItem>()
-    private var conditionsBacking : List<UpdateCondition>? = null
+    private val defaultConditions = listOf(
+        normalItemCondition,
+        sulfrasItemCondition,
+        agedBrieCondition,
+        conjuredItemCondition,
+        backStageItemCondition
+    )
 
-   constructor(itemRecords: List<ItemRecord>, conditions: List<UpdateCondition>):this(items = emptyList()){
-       grItems.addAll(itemRecords.toGRItems())
-       conditionsBacking = conditions
-   }
+    private val usedConditions: List<UpdateCondition> = conditions.ifEmpty {
+        defaultConditions
+    }
+
 
     internal fun updateQualityLegacy(){
         for (i in items.indices) {
@@ -70,7 +88,22 @@ class GildedRose(val items: List<Item>): GildedRoseApp{
         }
     }
 
+    private fun fallbackDefault(itemGroup: ItemGroup, inputRecord: ItemRecord): ItemRecord {
+        "FallbackDefault was used since to condition provided for Group: ${itemGroup.displayName}".output(Colour.Yellow)
+        inputRecord.update(inputRecord.sellIn - 1,  inputRecord.quality -1 )
+        return inputRecord
+    }
 
+    fun updateQuality(){
+        for (item in items){
+            val condition = usedConditions.firstOrNull{ it.itemGroup == item.itemGroup }
+            if(condition != null){
+                condition.update(item)
+            }else{
+                fallbackDefault(item.itemGroup, item)
+            }
+        }
+    }
 
 }
 
