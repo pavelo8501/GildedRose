@@ -79,11 +79,11 @@ abstract class GildedTestBase {
                 val changeText = "from $i to ${i-1}"
                 val conditionText = "Changing ${item.name} initial Quality of $quality & SellIn of $sellIn  $changeText"
                 val testResult = TestResult(conditionText, item)
-                app.updateQuality()
+                app.updateQualityLegacy()
                 testResult.registerResult(item)
                 resultList.add(testResult)
             }else{
-                app.updateQuality()
+                app.updateQualityLegacy()
             }
         }
         return resultList

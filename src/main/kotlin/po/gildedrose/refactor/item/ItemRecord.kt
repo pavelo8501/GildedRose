@@ -5,8 +5,8 @@ import po.gildedrose.refactor.ItemGroup
 
 interface ItemRecord {
     val name: String
-    val sellIn: Int
-    val quality: Int
+    var sellIn: Int
+    var quality: Int
     val itemGroup: ItemGroup
 
     fun update(sellIn: Int, quality: Int)

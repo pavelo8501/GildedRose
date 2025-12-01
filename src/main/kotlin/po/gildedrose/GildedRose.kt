@@ -1,10 +1,24 @@
 package po.gildedrose
 
+import po.gildedrose.refactor.application.GildedRoseApp
+import po.gildedrose.refactor.conditions.UpdateCondition
+import po.gildedrose.refactor.item.GRItem
+import po.gildedrose.refactor.item.ItemRecord
+import po.gildedrose.refactor.item.toGRItems
 
 
-class GildedRose(val items: List<Item>){
+class GildedRose(val items: List<Item>): GildedRoseApp{
 
-    fun updateQuality() {
+
+    private var grItems = mutableListOf<GRItem>()
+    private var conditionsBacking : List<UpdateCondition>? = null
+
+   constructor(itemRecords: List<ItemRecord>, conditions: List<UpdateCondition>):this(items = emptyList()){
+       grItems.addAll(itemRecords.toGRItems())
+       conditionsBacking = conditions
+   }
+
+    internal fun updateQualityLegacy(){
         for (i in items.indices) {
             if (items[i].name != "Aged Brie" && items[i].name != "Backstage passes to a TAFKAL80ETC concert") {
                 if (items[i].quality > 0) {
@@ -55,5 +69,8 @@ class GildedRose(val items: List<Item>){
             }
         }
     }
+
+
+
 }
 

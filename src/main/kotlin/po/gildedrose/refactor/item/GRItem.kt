@@ -18,6 +18,7 @@ class GRItem(
 ): Item(itemName, itemSellIn,itemQuality), ItemRecord {
 
    constructor(item: Item):this(item.name, itemSellIn =  item.sellIn, item.quality, parseNameToGroup(item.name))
+   constructor(item: ItemRecord):this(item.name, itemSellIn =  item.sellIn, item.quality, parseNameToGroup(item.name))
 
     companion object{
         fun parseNameToGroup(name: String): ItemGroup {
@@ -47,4 +48,10 @@ class GRItem(
 }
 
 fun Item.toGRItem(): GRItem = GRItem(this)
+
+//fun ItemRecord.toGRItem(): GRItem = this as GRItem
+
 fun Collection<Item>.toGRItems(): List<GRItem> = map { it.toGRItem() }
+
+@JvmName("toGRItemsItemRecordReceiver")
+fun Collection<ItemRecord>.toGRItems(): List<GRItem> = map { it as GRItem }
