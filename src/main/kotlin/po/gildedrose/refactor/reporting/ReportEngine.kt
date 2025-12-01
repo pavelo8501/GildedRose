@@ -1,13 +1,14 @@
 package po.gildedrose.refactor.reporting
 
 import po.gildedrose.refactor.ItemGroup
+import po.gildedrose.refactor.application.GildedDSL
 import po.gildedrose.refactor.item.ItemRecord
 import po.misc.types.token.TypeToken
 
 
 class ReportEngine<T: ItemRecord>(
     val typeToken: TypeToken<T>,
-    val selector: ((T)-> Boolean)? = null
+    var selector: ((T)-> Boolean)? = null
 ) {
     constructor(typeToken: TypeToken<T>, groupFilter: ItemGroup, range: Pair<Long, Long>? = null):this(typeToken) {
         byGroupFilter = groupFilter
@@ -17,28 +18,16 @@ class ReportEngine<T: ItemRecord>(
         byGroupFilter = groupFilter
         byRangeFilter = range
     }
-
-    private val reportBacking = mutableListOf<T>()
-    val report : List<T> get() =  reportBacking
+    
     private val reportRecordsBacking = mutableListOf<ReportRecord>()
     val reportRecords : List<ReportRecord> get() = reportRecordsBacking
 
     private var byRangeFilter: Pair<Long, Long>? = null
     private var byGroupFilter:ItemGroup? = null
 
-    private fun includeBySelector(item: T): Boolean{
+    private fun processBySelector(item: T, day: Int): ReportRecord?{
         val shouldInclude = selector?.invoke(item)?:false
         if(shouldInclude){
-            reportBacking.add(item)
-            return true
-        }
-        return false
-    }
-
-    private fun includeBySelector(item: T, day: Int): ReportRecord?{
-        val shouldInclude = selector?.invoke(item)?:false
-        if(shouldInclude){
-            reportBacking.add(item)
              return ReportRecord(item, day).also {
                 reportRecordsBacking.add(it)
             }
@@ -58,26 +47,7 @@ class ReportEngine<T: ItemRecord>(
         return false
     }
 
-    private fun includeByParameters(item: T){
-        byGroupFilter?.let {
-            if(item.itemGroup != it ){
-                return
-            }
-        }
-        byRangeFilter?.let {filter->
-            if (item.id >= filter.first && (item.id <= filter.second || filter.second == 0L)) {
-                reportBacking.add(item)
-                return
-            }else{
-                return
-            }
-        }
-        if(byGroupFilter!= null){
-            reportBacking.add(item)
-        }
-    }
-
-    private fun includeByParameters(item: T, day: Int):ReportRecord?{
+    private fun  processByParameters(item: T, day: Int):ReportRecord?{
         byGroupFilter?.let {
             if(item.itemGroup != it ){
                 return null
@@ -100,31 +70,35 @@ class ReportEngine<T: ItemRecord>(
         return null
     }
 
-    fun includeToReport(item: T){
-        if(!includeBySelector(item)){
-            includeByParameters(item)
-        }
+    @GildedDSL
+    fun includeToReport(selector:(T) -> Boolean){
+        this.selector = selector
     }
 
-    fun includeToReport(item: T, day: Int, block: (ReportRecord?)-> Unit):T {
-        if(includeBySelector(item, day) == null){
-           val record = includeByParameters(item, day)
+    fun processItem(item: T, day: Int, block: (ReportRecord?)-> Unit):ReportRecord? {
+        if(processBySelector(item, day) == null){
+           val record = processByParameters(item, day)
             block.invoke(record)
-            return item
+            return record
         }
         block.invoke(null)
-        return item
+        return null
     }
 
-    fun includeToReport(items: List<T>):List<T>{
-        items.forEach {
-            includeToReport(it)
+    fun processItem(item: T, day: Int):ReportRecord? {
+        if(processBySelector(item, day) == null){
+            val record = processByParameters(item, day)
+            return record
         }
-        return report
+        return null
     }
+
+    fun processItems(items: List<T>, day: Int): List<ReportRecord> =
+        items.mapNotNull { processItem(it, day) }
+
 
     fun clear(){
-        reportBacking.clear()
+        reportRecordsBacking.clear()
     }
 
 }

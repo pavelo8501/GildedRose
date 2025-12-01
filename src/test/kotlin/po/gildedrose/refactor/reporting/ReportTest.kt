@@ -17,16 +17,16 @@ class ReportTest : GildedTestBase(){
     fun `Report parametrized conditions work as expected`(){
         val items =  originalItemList.toGRItems()
         val reportByGroup  = ReportEngine(TypeToken.create<GRItem>(), ItemGroup.BackstagePasses)
-        var report =  reportByGroup.includeToReport(items)
+        var report =  reportByGroup.processItems(items, 0)
         assertEquals(3, report.size)
 
         val itemsStartingFromId = items.filter { it.id >= 8L }
         val reportByRange = ReportEngine(TypeToken.create<GRItem>(), Pair(8, 0))
-        report = reportByRange.includeToReport(items)
+        report = reportByRange.processItems(items, 0)
         assertEquals(itemsStartingFromId.size, report.size)
 
         val reportByCompleteRange = ReportEngine(TypeToken.create<GRItem>(), Pair(1, 3))
-        report = reportByCompleteRange.includeToReport(items)
+        report = reportByCompleteRange.processItems(items, 0)
         assertEquals(3, report.size)
     }
 
@@ -37,9 +37,9 @@ class ReportTest : GildedTestBase(){
             item.itemGroup == ItemGroup.BackstagePasses
         }
         items.forEach {
-            reportEngine.includeToReport(it)
+            reportEngine.processItem(it, 0)
         }
-        val report = reportEngine.report
+        val report = reportEngine.reportRecords
         assertEquals(3, report.size)
         reportEngine.clear()
     }
@@ -49,10 +49,10 @@ class ReportTest : GildedTestBase(){
         val items =  originalItemList.toGRItems()
         val projectedResult = 10
         val reportByGroup  = ReportEngine(TypeToken.create<GRItem>(), ItemGroup.BackstagePasses)
-        val report =  reportByGroup.includeToReport(items)
+        val report =  reportByGroup.processItems(items, 0)
 
         items.forEach {item->
-           reportByGroup.includeToReport(item, day = 1){record->
+           reportByGroup.processItem(item, day = 1){record->
                record?.provideResult(projectedResult)
            }
         }

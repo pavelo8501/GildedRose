@@ -5,12 +5,15 @@ import po.gildedrose.refactor.item.GRItem
 import po.gildedrose.refactor.item.ItemRecord
 import po.gildedrose.refactor.item.toGRItems
 import po.misc.types.token.TypeToken
+import po.misc.types.token.isSubclassOf
+import kotlin.reflect.full.isSubclassOf
 
 
 private fun  runMain(
     args: Array<String>,
     useItems: List<ItemRecord>?,
     onCalculated: ((FixtureData)-> Unit)?){
+
 
     val printout = onCalculated == null
 
@@ -37,6 +40,8 @@ private fun  runMain(
         GildedRose(useItems)
     }
 
+    val isSubclassItemRecord: Boolean =  app.typeToken.isSubclassOf(ItemRecord::class)
+
     var days = 2
     if (args.size > 0) {
         days = Integer.parseInt(args[0]) + 1
@@ -58,7 +63,11 @@ private fun  runMain(
         if(printout) {
             println()
         }
-        app.updateQuality()
+        if(isSubclassItemRecord){
+            app.updateQuality(i)
+        }else{
+            app.updateQuality()
+        }
     }
 }
 

@@ -2,7 +2,7 @@
 val kotlinVersion: String by project
 val funHelpersVersion:String by project
 val serializationVersion: String by project
-
+val kotlinReflectVersion: String by project
 val junitVersion: String by project
 
 
@@ -27,6 +27,7 @@ kotlin {
 
 dependencies {
 	implementation(kotlin("stdlib"))
+    implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinReflectVersion}")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${serializationVersion}")
     implementation("po.misc:funhelpers:${funHelpersVersion}")
 

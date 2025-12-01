@@ -2,6 +2,7 @@ package po.gildedrose
 
 import po.gildedrose.refactor.ItemGroup
 import po.gildedrose.refactor.application.GildedRoseApp
+import po.gildedrose.refactor.application.GildedRoseBuilder
 import po.gildedrose.refactor.conditions.UpdateCondition
 import po.gildedrose.refactor.conditions.agedBrieCondition
 import po.gildedrose.refactor.conditions.backStageItemCondition
@@ -10,6 +11,9 @@ import po.gildedrose.refactor.conditions.normalItemCondition
 import po.gildedrose.refactor.conditions.sulfrasItemCondition
 import po.gildedrose.refactor.item.ItemRecord
 import po.gildedrose.refactor.item.differentiateItems
+import po.gildedrose.refactor.reporting.ReportEngine
+import po.gildedrose.refactor.reporting.ReportRecord
+import po.misc.collections.asList
 import po.misc.data.output.output
 import po.misc.data.styles.Colour
 import po.misc.types.token.TypeToken
@@ -17,7 +21,7 @@ import po.misc.types.token.TypeToken
 
 class GildedRose<T:ItemRecord>(
     val typeToken: TypeToken<T>,
-    val items: List<T>, conditions: List<UpdateCondition> = emptyList()
+    val items: List<T>, conditions: List<UpdateCondition> = emptyList(),
 ): GildedRoseApp{
 
     private val defaultConditions = listOf(
@@ -27,9 +31,18 @@ class GildedRose<T:ItemRecord>(
         conjuredItemCondition,
         backStageItemCondition
     )
-
     private val usedConditions: List<UpdateCondition> = conditions.ifEmpty {
         defaultConditions
+    }
+
+    var reports = listOf<ReportEngine<T>>()
+        private set
+
+    @PublishedApi
+    internal fun resolveConfig(builder :GildedRoseBuilder<T>){
+        builder.gerReports()?.let {
+            reports = it.asList()
+        }
     }
 
     internal fun differentiateItems(itemRecords: List<T>):List<T>{
@@ -92,23 +105,38 @@ class GildedRose<T:ItemRecord>(
         inputRecord.update(inputRecord.sellIn - 1,  inputRecord.quality -1 )
         return inputRecord
     }
-    internal fun updateQualityByConditions(){
+
+    internal fun updateQualityByConditions(day: Int?){
         val processedItems = differentiateItems(items)
         for (item in processedItems){
             val condition = usedConditions.firstOrNull{ it.itemGroup == item.itemGroup }
             if(condition != null){
-                condition.update(item)
+                if(day != null){
+                    reports.forEach {engine->
+                        engine.processItem(item, day){record->
+                            condition.update(item)
+                            record?.provideResult(item.quality)
+                        }
+                       // engine.processItem(item, day)
+                    }
+                }else{
+                    condition.update(item)
+                }
             }else{
                 fallbackDefault(item.itemGroup, item)
             }
         }
     }
 
-    fun updateQuality(){
+    fun updateQuality(day: Int? = null){
         when(typeToken.kClass){
             is Item -> updateQualityLegacy()
-            else -> updateQualityByConditions()
+            else -> updateQualityByConditions(day)
         }
+    }
+
+    fun collectReport(): List<ReportRecord>{
+       return reports.flatMap { it.reportRecords }
     }
 
     companion object {
@@ -122,6 +150,18 @@ class GildedRose<T:ItemRecord>(
                 GildedRose(TypeToken.create<T>(), items)
             }
         }
+
+        inline operator fun <reified T:ItemRecord> invoke(
+            items: List<T>,
+            noinline builderAction: GildedRoseBuilder<T>.()-> Unit,
+        ):GildedRose<T>{
+           val app = GildedRose(TypeToken.create<T>(), items, emptyList())
+            val builder =  GildedRoseBuilder(TypeToken.create<T>())
+            builderAction.invoke(builder)
+            app.resolveConfig(builder)
+           return app
+        }
+
     }
 }
 
