@@ -1,12 +1,14 @@
 package po.gildedrose
 
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertDoesNotThrow
 import po.gildedrose.refactor.item.GRItem
 import po.gildedrose.refactor.ItemGroup
 import po.gildedrose.refactor.item.toGRItem
 import po.gildedrose.setup.GildedTestBase
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
+import kotlin.test.assertTrue
 
 
 class GRItemTest : GildedTestBase() {
@@ -61,4 +63,19 @@ class GRItemTest : GildedTestBase() {
         grItem = GRItem(sulfurasName, itemSellIn = sulfurasItem.sellIn,  itemQuality = sulfurasItem.quality, ItemGroup.Sulfuras)
         assertEquals(sulfurasItem.name, grItem.name)
     }
+
+    @Test
+    fun `Serialization of GRItem`(){
+        val firstItem = originalItemList.first()
+        val jsonString = assertDoesNotThrow {
+           val item = firstItem.toGRItem()
+            jsonParser.encodeToString(item)
+        }
+        assertTrue {
+            jsonString.contains(firstItem.name) &&
+                    jsonString.contains(firstItem.quality.toString()) &&
+                        jsonString.contains(firstItem.sellIn.toString())
+        }
+    }
+
 }

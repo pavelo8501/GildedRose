@@ -50,7 +50,6 @@ abstract class GildedTestBase {
     }
 
 
-
     val jsonParser = Json{
         isLenient = true
         prettyPrint = true
