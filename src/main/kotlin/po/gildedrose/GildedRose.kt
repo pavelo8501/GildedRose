@@ -1,6 +1,8 @@
-package com.gildedrose
+package po.gildedrose
 
-class GildedRose(val items: List<Item>) {
+
+
+class GildedRose(val items: List<Item>){
 
     fun updateQuality() {
         for (i in items.indices) {
@@ -53,6 +55,5 @@ class GildedRose(val items: List<Item>) {
             }
         }
     }
-
 }
 

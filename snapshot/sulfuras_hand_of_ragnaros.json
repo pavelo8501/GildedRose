@@ -1,0 +1,38 @@
+[
+    {
+        "Condition": "Changing Sulfuras, Hand of Ragnaros initial Quality of 50 & SellIn of 28  from 12 to 11",
+        "Item name": "Sulfuras, Hand of Ragnaros",
+        "Initial Sell-in": 28,
+        "Initial quality": 50,
+        "Resulting Sell-in": 28,
+        "Resulting Quality": 50,
+        "Difference": 0
+    },
+    {
+        "Condition": "Changing Sulfuras, Hand of Ragnaros initial Quality of 50 & SellIn of 28  from 9 to 8",
+        "Item name": "Sulfuras, Hand of Ragnaros",
+        "Initial Sell-in": 28,
+        "Initial quality": 50,
+        "Resulting Sell-in": 28,
+        "Resulting Quality": 50,
+        "Difference": 0
+    },
+    {
+        "Condition": "Changing Sulfuras, Hand of Ragnaros initial Quality of 50 & SellIn of 28  from 2 to 1",
+        "Item name": "Sulfuras, Hand of Ragnaros",
+        "Initial Sell-in": 28,
+        "Initial quality": 50,
+        "Resulting Sell-in": 28,
+        "Resulting Quality": 50,
+        "Difference": 0
+    },
+    {
+        "Condition": "Changing Sulfuras, Hand of Ragnaros initial Quality of 50 & SellIn of 28  from 1 to 0",
+        "Item name": "Sulfuras, Hand of Ragnaros",
+        "Initial Sell-in": 28,
+        "Initial quality": 50,
+        "Resulting Sell-in": 28,
+        "Resulting Quality": 50,
+        "Difference": 0
+    }
+]
