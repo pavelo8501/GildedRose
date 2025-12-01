@@ -1,15 +1,13 @@
 package po.gildedrose
 
 import po.gildedrose.models.FixtureData
-import po.gildedrose.refactor.ItemGroup
-import po.gildedrose.refactor.conditions.UpdateCondition
 import po.gildedrose.refactor.item.GRItem
 import po.gildedrose.refactor.item.ItemRecord
 import po.gildedrose.refactor.item.toGRItems
-import java.util.concurrent.locks.Condition
+import po.misc.types.token.TypeToken
 
 
-private fun runMain(
+private fun  runMain(
     args: Array<String>,
     useItems: List<ItemRecord>?,
     onCalculated: ((FixtureData)-> Unit)?){
@@ -60,7 +58,7 @@ private fun runMain(
         if(printout) {
             println()
         }
-        app.updateQualityLegacy()
+        app.updateQuality()
     }
 }
 

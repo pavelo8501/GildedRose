@@ -8,21 +8,18 @@ import po.gildedrose.refactor.conditions.backStageItemCondition
 import po.gildedrose.refactor.conditions.conjuredItemCondition
 import po.gildedrose.refactor.conditions.normalItemCondition
 import po.gildedrose.refactor.conditions.sulfrasItemCondition
-import po.gildedrose.refactor.item.GRItem
 import po.gildedrose.refactor.item.ItemRecord
+import po.gildedrose.refactor.item.differentiateItems
 import po.misc.data.output.output
 import po.misc.data.styles.Colour
+import po.misc.types.token.TypeToken
 
 
+class GildedRose<T:ItemRecord>(
+    val typeToken: TypeToken<T>,
+    val items: List<T>, conditions: List<UpdateCondition> = emptyList()
+): GildedRoseApp{
 
-class GildedRose(val items: List<ItemRecord>,  conditions: List<UpdateCondition> = emptyList()): GildedRoseApp{
-
-
-//   constructor(itemRecords: List<ItemRecord>,  updateConditions: List<UpdateCondition>):this(items = emptyList(), conditions = updateConditions){
-//       grItems.addAll(itemRecords.toGRItems())
-//   }
-//
-    private var grItems = mutableListOf<GRItem>()
     private val defaultConditions = listOf(
         normalItemCondition,
         sulfrasItemCondition,
@@ -35,6 +32,9 @@ class GildedRose(val items: List<ItemRecord>,  conditions: List<UpdateCondition>
         defaultConditions
     }
 
+    internal fun differentiateItems(itemRecords: List<T>):List<T>{
+        return itemRecords.differentiateItems()
+    }
 
     internal fun updateQualityLegacy(){
         for (i in items.indices) {
@@ -87,15 +87,14 @@ class GildedRose(val items: List<ItemRecord>,  conditions: List<UpdateCondition>
             }
         }
     }
-
-    private fun fallbackDefault(itemGroup: ItemGroup, inputRecord: ItemRecord): ItemRecord {
+    internal fun fallbackDefault(itemGroup: ItemGroup, inputRecord: ItemRecord): ItemRecord {
         "FallbackDefault was used since to condition provided for Group: ${itemGroup.displayName}".output(Colour.Yellow)
         inputRecord.update(inputRecord.sellIn - 1,  inputRecord.quality -1 )
         return inputRecord
     }
-
-    fun updateQuality(){
-        for (item in items){
+    internal fun updateQualityByConditions(){
+        val processedItems = differentiateItems(items)
+        for (item in processedItems){
             val condition = usedConditions.firstOrNull{ it.itemGroup == item.itemGroup }
             if(condition != null){
                 condition.update(item)
@@ -105,5 +104,24 @@ class GildedRose(val items: List<ItemRecord>,  conditions: List<UpdateCondition>
         }
     }
 
+    fun updateQuality(){
+        when(typeToken.kClass){
+            is Item -> updateQualityLegacy()
+            else -> updateQualityByConditions()
+        }
+    }
+
+    companion object {
+        inline operator fun <reified T:ItemRecord> invoke(
+            items: List<T>,
+            conditions: List<UpdateCondition>? = null
+        ):GildedRose<T>{
+          return  conditions?.let {
+                GildedRose(TypeToken.create<T>(),  items, it)
+            }?:run {
+                GildedRose(TypeToken.create<T>(), items)
+            }
+        }
+    }
 }
 

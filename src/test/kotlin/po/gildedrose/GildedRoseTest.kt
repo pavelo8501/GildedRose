@@ -11,7 +11,7 @@ internal class GildedRoseTest {
         val productName = "foo"
         val items = listOf(Item(productName, 0, 0))
         val app = GildedRose(items.toGRItems())
-        app.updateQualityLegacy()
+        app.updateQuality()
         assertEquals(productName, app.items[0].name)
     }
 

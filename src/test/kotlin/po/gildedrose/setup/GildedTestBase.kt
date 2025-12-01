@@ -31,9 +31,9 @@ abstract class GildedTestBase {
     ){
         @SerialName("Item name")
         val itemName: String = item.name
-        @SerialName("Initial Sell-in")
+        @SerialName("Step initial sell-in")
         val initialSellIn: Int = item.sellIn
-        @SerialName("Initial quality")
+        @SerialName("Step initial quality")
         val initialQuality: Int = item.quality
 
         @SerialName("Resulting Sell-in")
@@ -62,6 +62,7 @@ abstract class GildedTestBase {
         isLenient = true
         prettyPrint = true
         encodeDefaults = true
+        ignoreUnknownKeys = true
     }
 
     val originalItemList = listOf(
@@ -77,7 +78,7 @@ abstract class GildedTestBase {
         Item("Conjured Mana Cake", 3, 6)
     )
 
-    fun simulateFor(sellIn: Int, quality: Int, item: GRItem, app: GildedRose): List<TestResult>{
+    fun simulateFor(sellIn: Int, quality: Int, item: GRItem, app: GildedRose<*>): List<TestResult>{
         val resultList = mutableListOf<TestResult>()
         item.sellIn = sellIn
         item.quality = quality
@@ -86,11 +87,11 @@ abstract class GildedTestBase {
                 val changeText = "from $i to ${i-1}"
                 val conditionText = "Changing ${item.name} initial Quality of $quality & SellIn of $sellIn  $changeText"
                 val testResult = TestResult(conditionText, item)
-                app.updateQualityLegacy()
+                app.updateQuality()
                 testResult.registerResult(item)
                 resultList.add(testResult)
             }else{
-                app.updateQualityLegacy()
+                app.updateQuality()
             }
         }
         return resultList

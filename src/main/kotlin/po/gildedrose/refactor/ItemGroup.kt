@@ -19,8 +19,27 @@ enum class ItemGroup(val displayName: String) {
     BackstagePasses("Backstage passes");
 
     companion object{
-        fun itemGroup(displayName: String):ItemGroup{
+
+        fun resolveGroup(displayName: String):ItemGroup{
             return ItemGroup.entries.firstOrNull { it.displayName == displayName }?: Default
+        }
+
+        /**
+         * Attempts to infer the logical [ItemGroup] from the item name.
+         * This heuristic is intentionally simple and case-insensitive.
+         *
+         * Unknown names default to [ItemGroup.Default].
+         */
+        fun parseNameToGroup(name: String): ItemGroup {
+            val lowercasedName = name.lowercase()
+            val group = when{
+                lowercasedName.contains("conjured") -> ItemGroup.Conjured
+                lowercasedName.contains("aged brie") -> ItemGroup.AgedBrie
+                lowercasedName.contains("sulfuras")-> ItemGroup.Sulfuras
+                lowercasedName.contains("backstage passes") -> ItemGroup.BackstagePasses
+                else -> ItemGroup.Default
+            }
+            return group
         }
     }
 }

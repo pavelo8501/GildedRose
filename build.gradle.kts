@@ -30,9 +30,6 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${serializationVersion}")
     implementation("po.misc:funhelpers:${funHelpersVersion}")
 
-	//testImplementation(kotlin("test"))
-	//testImplementation("org.junit.jupiter:junit-jupiter:5.12.2")
-
     testImplementation("org.jetbrains.kotlin:kotlin-test:${kotlinVersion}")
     testImplementation("org.junit.jupiter:junit-jupiter:${junitVersion}")
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
