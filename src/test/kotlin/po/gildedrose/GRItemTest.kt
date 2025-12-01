@@ -35,12 +35,12 @@ class GRItemTest : GildedTestBase() {
         assertEquals(originalItem.quality, grItem.quality)
         assertEquals(originalItem.sellIn, grItem.sellIn)
 
-        val elixirItem = assertNotNull( originalItemList.firstOrNull{ it.name.contains("Elixir") } )
-        grItem = elixirItem.toGRItem()
-        assertEquals(ItemGroup.Elixir, grItem.itemGroup)
-        assertEquals(elixirItem.name, grItem.name)
-        assertEquals(elixirItem.quality, grItem.quality)
-        assertEquals(elixirItem.sellIn, grItem.sellIn)
+        val conjuredItem = assertNotNull( originalItemList.firstOrNull{ it.name.contains("Conjured") } )
+        grItem = conjuredItem.toGRItem()
+        assertEquals(ItemGroup.Conjured, grItem.itemGroup)
+        assertEquals(conjuredItem.name, grItem.name)
+        assertEquals(conjuredItem.quality, grItem.quality)
+        assertEquals(conjuredItem.sellIn, grItem.sellIn)
 
         val sulfurasItem = assertNotNull( originalItemList.firstOrNull{ it.name.contains("Sulfuras") } )
         grItem = sulfurasItem.toGRItem()

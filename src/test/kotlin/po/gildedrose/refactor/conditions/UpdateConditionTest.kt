@@ -38,6 +38,17 @@ class UpdateConditionTest: GildedTestBase() {
     }
 
     @Test
+    fun `Conjured condition`(){
+        val item = originalItemList.toGRItems().first { it.itemGroup == ItemGroup.Conjured }
+        makeUpdate(10, 10, item, conjuredItemCondition)
+        assertEquals(9, item.sellIn)
+        assertEquals(8, item.quality, normalPathText(8))
+
+        makeUpdate(0, 10, item, conjuredItemCondition)
+        assertEquals(6, item.quality, dueSellInText(6))
+    }
+
+    @Test
     fun `Aged Brie condition`(){
 
         val item = originalItemList.toGRItems().first { it.itemGroup == ItemGroup.AgedBrie }
@@ -52,7 +63,6 @@ class UpdateConditionTest: GildedTestBase() {
 
     @Test
     fun `Sulfras  condition`(){
-
         val item = originalItemList.toGRItems().first { it.itemGroup == ItemGroup.Sulfuras }
         makeUpdate(10, 10, item, sulfrasItemCondition)
         assertEquals(10, item.sellIn)
@@ -62,16 +72,6 @@ class UpdateConditionTest: GildedTestBase() {
         assertEquals(80, item.quality, dueSellInText(10))
     }
 
-    @Test
-    fun `Conjured condition`(){
-        val item = originalItemList.toGRItems().first { it.itemGroup == ItemGroup.Conjured }
-        makeUpdate(10, 10, item, conjuredItemCondition)
-        assertEquals(9, item.sellIn)
-        assertEquals(8, item.quality, normalPathText(8))
-
-        makeUpdate(0, 10, item, conjuredItemCondition)
-        assertEquals(6, item.quality, dueSellInText(6))
-    }
 
     @Test
     fun `BackStage condition`(){

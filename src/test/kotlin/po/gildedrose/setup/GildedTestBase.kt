@@ -12,6 +12,16 @@ import po.misc.data.strings.appendGroup
 
 abstract class GildedTestBase {
 
+    enum class Snapshot(val path: String) {
+        NormalItem("snapshot/5_dexterity_vest.json"),
+        ConjuredItem("snapshot/conjured_mana_cake.json"),
+        AgedItem("snapshot/aged_brie.json"),
+        SulfrasItem("snapshot/sulfuras_hand_of_ragnaros.json"),
+        ElixirItem("snapshot/elixir_of_the_mongoose.json"),
+        BackstageItem("snapshot/backstage_passes_to_a_tafkal80etc_concert.json")
+
+    }
+
     @Serializable
     data class TestResult(
         @SerialName("Condition")
@@ -40,7 +50,6 @@ abstract class GildedTestBase {
             resultingQuality = quality
             difference = initialQuality - quality
         }
-
         override fun toString(): String {
            return buildString {
                 append(conditionName)
@@ -49,12 +58,10 @@ abstract class GildedTestBase {
         }
     }
 
-
     val jsonParser = Json{
         isLenient = true
         prettyPrint = true
         encodeDefaults = true
-
     }
 
     val originalItemList = listOf(
@@ -92,6 +99,5 @@ abstract class GildedTestBase {
     fun createItem(name: String, sellIn: Int = 10, quality: Int = 20): Item{
        return Item(name, sellIn, quality)
     }
-
 
 }
