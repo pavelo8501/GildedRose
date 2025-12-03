@@ -65,13 +65,13 @@ class UpdateConditionTest: GildedTestBase() {
     fun `Sulfras  condition`(){
         val item = originalItemList.toGRItems().first { it.itemGroup == ItemGroup.Sulfuras }
         makeUpdate(10, 10, item, sulfrasItemCondition)
+
         assertEquals(10, item.sellIn)
-        assertEquals(80, item.quality, normalPathText(80))
+        assertEquals(10, item.quality, normalPathText(10))
 
         makeUpdate(0, 10, item, sulfrasItemCondition)
-        assertEquals(80, item.quality, dueSellInText(10))
+        assertEquals(10, item.quality, dueSellInText(10))
     }
-
 
     @Test
     fun `BackStage condition`(){

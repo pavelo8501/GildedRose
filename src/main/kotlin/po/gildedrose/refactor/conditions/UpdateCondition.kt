@@ -44,11 +44,15 @@ class UpdateCondition(
     val itemGroup: ItemGroup,
     val conditionalUpdater: (ItemRecord) -> Unit
 ){
-
     /**
      * Applies this condition to the given [item].
      */
     fun update(item: ItemRecord){
         conditionalUpdater.invoke(item)
     }
+
+    fun copy(useGroup: ItemGroup):UpdateCondition{
+       return UpdateCondition(useGroup, conditionalUpdater)
+    }
+
 }

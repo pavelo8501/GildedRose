@@ -46,14 +46,23 @@ class GRItem(
     private val itemSellIn: Int = 0,
     @Transient
     private val itemQuality: Int = 0,
-    override val itemGroup: ItemGroup
+    override val itemGroup: ItemGroup,
 ): Item(itemName, itemSellIn,itemQuality), ItemRecord {
 
     /**
      * Creates a `GRItem` by wrapping a raw kata [Item].
      * The [itemGroup] is inferred from the item name.
      */
-   constructor(item: Item):this(item.name, itemSellIn =  item.sellIn, item.quality, parseNameToGroup(item.name))
+   constructor(item: Item):this(item.name, item.sellIn, item.quality, ItemGroup.parseNameToGroup(item.name))
+
+    override var id: Long = 0
+        private set
+
+
+    override fun setItemId(itemId: Long):GRItem{
+         id = itemId
+        return this
+    }
 
     /**
      * Updates the mutable state of the underlying Gilded Rose item.
@@ -66,47 +75,35 @@ class GRItem(
     override fun toString(): String {
        return buildString {
             append("GRItem")
-            appendGroup('[', ']', ::name, ::quality, ::sellIn)
+            appendGroup('[', ']', ::id, ::name, ::quality, ::sellIn)
         }
     }
-
     companion object{
-
         /**
-         * Wraps the given [ItemRecord] into a `GRItem`.
-         * If it is already a `GRItem`, it is returned unchanged.
+         * Wraps the given [ItemRecord] into a [GRItem].
+         *
+         * - If [item] is already a [GRItem], it is returned unchanged.
+         * - If [item] is an [Item], the secondary constructor `GRItem(Item)` is used.
+         * - Otherwise, a new [GRItem] is created using the interface-based parameters.
+         *
+         * This method is intentionally defensive and accepts all [ItemRecord] implementations.
          */
         operator fun invoke(item: ItemRecord):GRItem{
            return when(item){
-                is GRItem -> return item
-                else -> GRItem(item.name, itemSellIn =  item.sellIn, item.quality, parseNameToGroup(item.name))
+                is GRItem -> item
+                is Item -> GRItem(item).setItemId(item.id)
+                else -> {
+                    val item = GRItem(item.name, item.sellIn, item.quality, ItemGroup.parseNameToGroup(item.name))
+                    item.setItemId(item.id)
+                }
             }
-        }
-
-        /**
-         * Attempts to infer the logical [ItemGroup] from the item name.
-         * This heuristic is intentionally simple and case-insensitive.
-         *
-         * Unknown names default to [ItemGroup.Default].
-         */
-        fun parseNameToGroup(name: String): ItemGroup {
-            val lowercasedName = name.lowercase()
-            val group = when{
-                lowercasedName.contains("aged brie") -> ItemGroup.AgedBrie
-                lowercasedName.contains("sulfuras")-> ItemGroup.Sulfuras
-                lowercasedName.contains("backstage passes") -> ItemGroup.BackstagePasses
-                lowercasedName.contains("conjured") -> ItemGroup.Conjured
-                else -> ItemGroup.Default
-            }
-            return group
         }
     }
 }
 
-
 fun Item.toGRItem(): GRItem = GRItem(this)
 
-fun Collection<Item>.toGRItems(): List<GRItem> = map { it.toGRItem() }
-
-@JvmName("toGRItemsItemRecordReceiver")
-fun Collection<ItemRecord>.toGRItems(): List<GRItem> = map { it as GRItem }
+fun Collection<Item>.toGRItems(): List<GRItem>{
+    val grItems =  map { it.toGRItem() }
+    return grItems.differentiateItems()
+}

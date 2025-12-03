@@ -2,9 +2,8 @@
 val kotlinVersion: String by project
 val funHelpersVersion:String by project
 val serializationVersion: String by project
-
+val kotlinReflectVersion: String by project
 val junitVersion: String by project
-
 
 plugins {
     kotlin("jvm") version "2.2.0"
@@ -27,15 +26,12 @@ kotlin {
 
 dependencies {
 	implementation(kotlin("stdlib"))
+    implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinReflectVersion}")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${serializationVersion}")
     implementation("po.misc:funhelpers:${funHelpersVersion}")
 
-	//testImplementation(kotlin("test"))
-	//testImplementation("org.junit.jupiter:junit-jupiter:5.12.2")
-
     testImplementation("org.jetbrains.kotlin:kotlin-test:${kotlinVersion}")
     testImplementation("org.junit.jupiter:junit-jupiter:${junitVersion}")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 

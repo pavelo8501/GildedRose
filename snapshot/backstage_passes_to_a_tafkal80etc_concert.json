@@ -2,35 +2,35 @@
     {
         "Condition": "Changing Backstage passes to a TAFKAL80ETC concert initial Quality of 50 & SellIn of 28  from 12 to 11",
         "Item name": "Backstage passes to a TAFKAL80ETC concert",
-        "Initial Sell-in": 10,
-        "Initial quality": 50,
+        "Step initial sell-in": 10,
+        "Step initial quality": 50,
         "Resulting Sell-in": 9,
-        "Resulting Quality": 50,
-        "Difference": 0
+        "Resulting Quality": 52,
+        "Difference": -2
     },
     {
         "Condition": "Changing Backstage passes to a TAFKAL80ETC concert initial Quality of 50 & SellIn of 28  from 9 to 8",
         "Item name": "Backstage passes to a TAFKAL80ETC concert",
-        "Initial Sell-in": 7,
-        "Initial quality": 50,
+        "Step initial sell-in": 7,
+        "Step initial quality": 56,
         "Resulting Sell-in": 6,
-        "Resulting Quality": 50,
-        "Difference": 0
+        "Resulting Quality": 58,
+        "Difference": -2
     },
     {
         "Condition": "Changing Backstage passes to a TAFKAL80ETC concert initial Quality of 50 & SellIn of 28  from 2 to 1",
         "Item name": "Backstage passes to a TAFKAL80ETC concert",
-        "Initial Sell-in": 0,
-        "Initial quality": 50,
+        "Step initial sell-in": 0,
+        "Step initial quality": 75,
         "Resulting Sell-in": -1,
         "Resulting Quality": 0,
-        "Difference": 50
+        "Difference": 75
     },
     {
         "Condition": "Changing Backstage passes to a TAFKAL80ETC concert initial Quality of 50 & SellIn of 28  from 1 to 0",
         "Item name": "Backstage passes to a TAFKAL80ETC concert",
-        "Initial Sell-in": -1,
-        "Initial quality": 0,
+        "Step initial sell-in": -1,
+        "Step initial quality": 0,
         "Resulting Sell-in": -2,
         "Resulting Quality": 0,
         "Difference": 0

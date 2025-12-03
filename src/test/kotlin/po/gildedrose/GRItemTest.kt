@@ -30,6 +30,7 @@ class GRItemTest : GildedTestBase() {
     fun `GRItem parameters should match original class instance`(){
         val originalItem = originalItemList.first()
         var grItem =  originalItem.toGRItem()
+
         assertEquals(ItemGroup.Default, grItem.itemGroup)
         assertEquals(originalItem.name, grItem.name)
         assertEquals(originalItem.quality, grItem.quality)

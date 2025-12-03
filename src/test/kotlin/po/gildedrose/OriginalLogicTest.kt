@@ -18,7 +18,7 @@ class OriginalLogicTest : GildedTestBase() {
     @Test
     fun `Creating snapshot of original list and update logic`(){
         val app = GildedRose(originalItemList.toGRItems())
-        app.updateQualityLegacy()
+        app.updateQuality()
         val resultingItems =  app.items.map { GRItem(it) }
         val jsonSnapshot = jsonParser.encodeToString(resultingItems)
         jsonSnapshot.writeToFile("/snapshot/original_logic.json", fwOptions)
@@ -27,7 +27,7 @@ class OriginalLogicTest : GildedTestBase() {
     @Test
     fun `Creating snapshot from TextFixture`(){
         val resultingList = mutableListOf<FixtureData>()
-        main(arrayOf("30")){
+        main(30){
             resultingList.add(it)
         }
         val jsonSnapshot = jsonParser.encodeToString(resultingList)
@@ -40,7 +40,7 @@ class OriginalLogicTest : GildedTestBase() {
         val initialSellIn = 28
         val initialQuality = 50
         for(item in items){
-            val app = GildedRose(item.asList(), emptyList())
+            val app = GildedRose(item.asList())
             val resultList = simulateFor(initialSellIn, initialQuality, item, app)
             println()
             resultList.output()

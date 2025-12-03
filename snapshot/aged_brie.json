@@ -1,36 +1,36 @@
 [
     {
-        "Condition": "Changing Aged Brie initial Quality of 50 & SellIn of 28  from 12 to 11",
+        "Condition": "Changing Aged Brie Step initial quality of 50 & SellIn of 28  from 12 to 11",
         "Item name": "Aged Brie",
-        "Initial Sell-in": 10,
-        "Initial quality": 50,
+        "Step initial sell-in": 10,
+        "Step initial quality": 50,
         "Resulting Sell-in": 9,
         "Resulting Quality": 50,
         "Difference": 0
     },
     {
-        "Condition": "Changing Aged Brie initial Quality of 50 & SellIn of 28  from 9 to 8",
+        "Condition": "Changing Aged Brie Step initial quality of 50 & SellIn of 28  from 9 to 8",
         "Item name": "Aged Brie",
-        "Initial Sell-in": 7,
-        "Initial quality": 50,
+        "Step initial sell-in": 7,
+        "Step initial quality": 50,
         "Resulting Sell-in": 6,
         "Resulting Quality": 50,
         "Difference": 0
     },
     {
-        "Condition": "Changing Aged Brie initial Quality of 50 & SellIn of 28  from 2 to 1",
+        "Condition": "Changing Aged Brie Step initial quality of 50 & SellIn of 28  from 2 to 1",
         "Item name": "Aged Brie",
-        "Initial Sell-in": 0,
-        "Initial quality": 50,
+        "Step initial sell-in": 0,
+        "Step initial quality": 50,
         "Resulting Sell-in": -1,
         "Resulting Quality": 50,
         "Difference": 0
     },
     {
-        "Condition": "Changing Aged Brie initial Quality of 50 & SellIn of 28  from 1 to 0",
+        "Condition": "Changing Aged Brie Step initial quality of 50 & SellIn of 28  from 1 to 0",
         "Item name": "Aged Brie",
-        "Initial Sell-in": -1,
-        "Initial quality": 50,
+        "Step initial sell-in": -1,
+        "Step initial quality": 50,
         "Resulting Sell-in": -2,
         "Resulting Quality": 50,
         "Difference": 0
