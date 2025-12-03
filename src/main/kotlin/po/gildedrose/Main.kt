@@ -13,9 +13,7 @@ private fun  runMain(
     useApp: GildedRose<GRItem>? = null,
     beforeCalculated: ((FixtureData)-> Unit)? = null
 ){
-
     println("OMGHAI!")
-
 
     val app = useApp?:run {
         if (useItems == null) {
@@ -30,16 +28,23 @@ private fun  runMain(
         days = Integer.parseInt(args[0]) + 1
     }
     for (i in 0..days - 1) {
-        println("-------- day $i --------")
-        println("name, sellIn, quality")
+
+        if(app.withStandardPrintout){
+            println("-------- day $i --------")
+            println("name, sellIn, quality")
+        }
         for (item in app.items) {
             beforeCalculated?.let {
                 val data = FixtureData(day = i, name = item.name, sellIn = item.sellIn, quality = item.quality)
                 it.invoke(data)
             }
-            println(item)
+            if(app.withStandardPrintout) {
+                println(item)
+            }
         }
-        println()
+        if(app.withStandardPrintout) {
+            println()
+        }
         app.updateQuality(i)
     }
 }
@@ -73,6 +78,7 @@ fun runCommand(input: String) {
         }
         tokens.size == 3 && modifier == "pretty" -> {
             val app = GildedRose(GildedRose.defaultItems.toGRItems()){
+                withStandardPrintout = false
                 includeToReport {
                     true
                 }
@@ -90,7 +96,6 @@ fun interactiveConsole() {
     while (true) {
         println("> ")
         val input = readLine() ?: break
-        //val input = readlnOrNull()?.trim() ?: continue
         when {
             input.equals("exit", true) -> {
                 println("Goodbye!")

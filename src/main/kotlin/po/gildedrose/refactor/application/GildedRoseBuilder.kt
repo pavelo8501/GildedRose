@@ -49,9 +49,12 @@ import po.misc.types.token.TypeToken
  * @param T The specific subtype of [ItemRecord] handled by this instance.
  */
 class GildedRoseBuilder<T: ItemRecord>(
+
     val typeToken: TypeToken<T>
 ){
     val reportingEngine  : ReportEngine<T> = ReportEngine(typeToken)
+
+    var withStandardPrintout: Boolean = false
 
     internal fun gerReports(): ReportEngine<T>{
         return reportingEngine

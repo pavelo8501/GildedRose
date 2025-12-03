@@ -81,6 +81,8 @@ class GildedRose<T>(
     var useLegacyCode: Boolean = false
         internal set
 
+    var withStandardPrintout: Boolean = true
+
     /**
      * Initializes the custom-condition overrides when supplied.
      * A condition replaces another only if both have the same [ItemGroup].
@@ -115,6 +117,7 @@ class GildedRose<T>(
         builder.gerReports()?.let {
             report = it
         }
+        withStandardPrintout = builder.withStandardPrintout
     }
 
     internal fun differentiateItems(itemRecords: List<T>):List<T>{
