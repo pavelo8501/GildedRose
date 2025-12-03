@@ -5,6 +5,7 @@ import po.misc.data.PrettyPrint
 import po.misc.data.pretty_print.grid.buildPrettyGrid
 import po.misc.data.strings.appendGroup
 
+
 class ReportRecord(
     private val item: ItemRecord,
     val day: Int

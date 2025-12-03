@@ -17,7 +17,14 @@ version = "1.0-SNAPSHOT"
 
 repositories {
 	mavenCentral()
-    mavenLocal()
+    maven {
+        name = "PublicGitHubPackages"
+        url = uri("https://maven.pkg.github.com/pavelo8501/ReKotlin")
+        credentials {
+            username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_USERNAME")
+            password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
+        }
+    }
 }
 
 kotlin {
@@ -28,7 +35,7 @@ dependencies {
 	implementation(kotlin("stdlib"))
     implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinReflectVersion}")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${serializationVersion}")
-    implementation("po.misc:funhelpers:${funHelpersVersion}")
+    api("po.misc:funhelpers:1.0.0")
 
     testImplementation("org.jetbrains.kotlin:kotlin-test:${kotlinVersion}")
     testImplementation("org.junit.jupiter:junit-jupiter:${junitVersion}")

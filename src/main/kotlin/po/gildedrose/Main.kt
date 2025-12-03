@@ -88,8 +88,9 @@ fun interactiveConsole() {
     println("=== Gilded Rose Simulator ===")
     println("Type 'help' for commands, 'exit' to quit")
     while (true) {
-        print("> ")
-        val input = readlnOrNull()?.trim() ?: continue
+        println("> ")
+        val input = readLine() ?: break
+        //val input = readlnOrNull()?.trim() ?: continue
         when {
             input.equals("exit", true) -> {
                 println("Goodbye!")

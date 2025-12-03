@@ -1,0 +1,7 @@
+services:
+  gildedrose:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gildedrose
+    image: gildedrose:latest
