@@ -20,7 +20,7 @@ class GildedRoseBuilderTest : GildedTestBase(){
                 item.itemGroup == ItemGroup.BackstagePasses && item.id == 6L
             }
         }
-        assertNotNull(app.reports.firstOrNull()){
+        assertNotNull(app.report){
              assertNotNull(it.selector)
         }
         repeat(2){
@@ -32,7 +32,7 @@ class GildedRoseBuilderTest : GildedTestBase(){
     }
 
     @Test
-    fun `GildedRoseBuilder shorthand usage test`(){
+    fun `GildedRoseBuilder report shorthand usage test`(){
         val app2 = GildedRose<GRItem>(originalItemList.toGRItems()){
             configReporting {
                 includeToReport{ item->
@@ -40,7 +40,7 @@ class GildedRoseBuilderTest : GildedTestBase(){
                 }
             }
         }
-        assertNotNull(app2.reports.firstOrNull()){
+        assertNotNull(app2.report){
             assertNotNull(it.selector)
         }
     }

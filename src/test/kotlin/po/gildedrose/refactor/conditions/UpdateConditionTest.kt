@@ -71,10 +71,7 @@ class UpdateConditionTest: GildedTestBase() {
 
         makeUpdate(0, 10, item, sulfrasItemCondition)
         assertEquals(10, item.quality, dueSellInText(10))
-
-
     }
-
 
     @Test
     fun `BackStage condition`(){

@@ -10,6 +10,7 @@ class ReportRecord(
     val day: Int
 ) : PrettyPrint {
     val id: Long = item.id
+    val groupName: String = item.itemGroup.displayName
     val itemName: String = item.name
     val qualityFrom: Int = item.quality
     var qualityTo: Int = -1
@@ -32,6 +33,7 @@ class ReportRecord(
                 addCells(
                     ReportRecord::day,
                     ReportRecord::id,
+                    ReportRecord::groupName,
                     ReportRecord::itemName,
                     ReportRecord::qualityFrom,
                     ReportRecord::qualityTo

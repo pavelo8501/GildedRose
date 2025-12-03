@@ -3,18 +3,28 @@ package po.gildedrose.refactor.reporting
 import po.gildedrose.refactor.ItemGroup
 import po.gildedrose.refactor.application.GildedDSL
 import po.gildedrose.refactor.item.ItemRecord
+import po.misc.data.PrettyPrint
+import po.misc.data.styles.SpecialChars
 import po.misc.types.token.TypeToken
 
 
 class ReportEngine<T: ItemRecord>(
     val typeToken: TypeToken<T>,
     var selector: ((T)-> Boolean)? = null
-) {
-    constructor(typeToken: TypeToken<T>, groupFilter: ItemGroup, range: Pair<Long, Long>? = null):this(typeToken) {
+) : PrettyPrint {
+    constructor(
+        typeToken: TypeToken<T>,
+        groupFilter: ItemGroup,
+        range: Pair<Long, Long>? = null
+    ):this(typeToken) {
         byGroupFilter = groupFilter
         byRangeFilter = range
     }
-    constructor(typeToken: TypeToken<T>, range: Pair<Long, Long>, groupFilter: ItemGroup? = null):this(typeToken) {
+    constructor(
+        typeToken: TypeToken<T>,
+        range: Pair<Long, Long>,
+        groupFilter: ItemGroup? = null
+    ):this(typeToken) {
         byGroupFilter = groupFilter
         byRangeFilter = range
     }
@@ -22,8 +32,14 @@ class ReportEngine<T: ItemRecord>(
     private val reportRecordsBacking = mutableListOf<ReportRecord>()
     val reportRecords : List<ReportRecord> get() = reportRecordsBacking
 
-    private var byRangeFilter: Pair<Long, Long>? = null
-    private var byGroupFilter:ItemGroup? = null
+    internal var byRangeFilter: Pair<Long, Long>? = null
+    internal var byGroupFilter:ItemGroup? = null
+    override val formattedString: String get() {
+           val str =  reportRecords.joinToString(separator = SpecialChars.NEW_LINE) {
+                it.formattedString
+            }
+            return str
+        }
 
     private fun processBySelector(item: T, day: Int): ReportRecord?{
         val shouldInclude = selector?.invoke(item)?:false
@@ -46,7 +62,7 @@ class ReportEngine<T: ItemRecord>(
         return false
     }
 
-    private fun  processByParameters(item: T, day: Int):ReportRecord?{
+    private fun processByParameters(item: T, day: Int):ReportRecord?{
         byGroupFilter?.let {
             if(item.itemGroup != it ){
                 return null
@@ -68,30 +84,49 @@ class ReportEngine<T: ItemRecord>(
         }
         return null
     }
+    private fun satisfiesParameters(item: T): Boolean{
+        byGroupFilter?.let {
+            if(item.itemGroup == it ){
+                return true
+            }
+        }
+        val filter = byRangeFilter
+        if(filter == null){
+            return false
+        }else{
+            return if (item.id >= filter.first && (item.id <= filter.second || filter.second == 0L)) {
+                return true
+            }else{
+                false
+            }
+        }
+    }
+    private fun satisfiesSelector(item: T): Boolean{
+        return selector?.invoke(item)?:false
+    }
 
     @GildedDSL
     fun includeToReport(selector:(T) -> Boolean){
         this.selector = selector
     }
-    fun processItem(item: T, day: Int, block: (ReportRecord?)-> Unit):ReportRecord? {
-        if(processBySelector(item, day) == null){
-           val record = processByParameters(item, day)
-            block.invoke(record)
+
+    internal fun reportItem(item: T, day: Int):ReportRecord?{
+        val record =  ReportRecord(item, day)
+        val bySelector = satisfiesSelector(item)
+        val byParams = satisfiesParameters(item)
+        if(bySelector || byParams){
+            reportRecordsBacking.add(record)
             return record
         }
-        block.invoke(null)
         return null
     }
-    fun processItem(item: T, day: Int):ReportRecord? {
-        val reportRecord = processBySelector(item, day)
-        if(reportRecord != null){
-            return reportRecord
-        }
-        return processByParameters(item, day)
-    }
-    fun processItems(items: List<T>, day: Int): List<ReportRecord> =
-        items.mapNotNull { processItem(it, day) }
 
+    internal fun <R> reportItem(item: T, day: Int, block: ()-> R):R{
+        val blockResult = block.invoke()
+        val record =  reportItem(item, day)
+        record?.provideResult(item.quality)
+        return blockResult
+    }
     fun clear(){
         reportRecordsBacking.clear()
     }

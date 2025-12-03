@@ -40,7 +40,7 @@ class OriginalLogicTest : GildedTestBase() {
         val initialSellIn = 28
         val initialQuality = 50
         for(item in items){
-            val app = GildedRose(item.asList(), emptyList())
+            val app = GildedRose(item.asList())
             val resultList = simulateFor(initialSellIn, initialQuality, item, app)
             println()
             resultList.output()

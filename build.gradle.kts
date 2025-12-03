@@ -5,7 +5,6 @@ val serializationVersion: String by project
 val kotlinReflectVersion: String by project
 val junitVersion: String by project
 
-
 plugins {
     kotlin("jvm") version "2.2.0"
     kotlin("plugin.serialization")
@@ -33,7 +32,6 @@ dependencies {
 
     testImplementation("org.jetbrains.kotlin:kotlin-test:${kotlinVersion}")
     testImplementation("org.junit.jupiter:junit-jupiter:${junitVersion}")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 

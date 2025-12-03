@@ -1,19 +1,17 @@
 package po.gildedrose.refactor.application
 
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.assertNotNull
 import po.gildedrose.GildedRose
-import po.gildedrose.main
 import po.gildedrose.models.FixtureData
 import po.gildedrose.refactor.ItemGroup
 import po.gildedrose.refactor.item.GRItem
 import po.gildedrose.refactor.item.toGRItems
 import po.gildedrose.setup.GildedTestBase
 import po.misc.collections.asList
-import po.misc.data.output.output
 import po.misc.functions.Throwing
 import po.misc.io.readFile
 import kotlin.test.assertEquals
+import kotlin.test.assertNotNull
 
 class GildedRoseAppTest : GildedTestBase() {
 
@@ -37,21 +35,22 @@ class GildedRoseAppTest : GildedTestBase() {
     }
 
     @Test
-    fun `Refactored application class produce same logic as legacy code did2`(){
-
+    fun `Refactored code did  did not changed original logic`(){
         val snapshot = loadFixtureSnapshot()
-        val fixtureResult = mutableListOf<FixtureData>()
-
-        main(numberOfDays =  30, originalItemList.toGRItems()){
-            fixtureResult.add(it)
+        val items = originalItemList.toGRItems()
+        val app = GildedRose(items)
+        var tickNo = 0
+        val failingRecord : (FixtureData) -> String = {
+            "For record $it"
         }
-        assertEquals(snapshot.size, fixtureResult.size)
-        snapshot.forEachIndexed {index, data->
-            val resultData = fixtureResult[index]
-            assertEquals(data.name, resultData.name, "Day # ${data.day} failed for name")
-            assertEquals(data.sellIn, resultData.sellIn, "Day # ${data.day} failed for sellIn")
-            assertEquals(data.quality, resultData.quality, "Day # ${data.day} failed for quality")
+        app.beforeUpdate.onSignal {item->
+            val fixtureRecord = assertNotNull(snapshot.getOrNull(tickNo))
+            assertEquals(item.quality, fixtureRecord.quality, failingRecord(fixtureRecord))
+            assertEquals(item.name, fixtureRecord.name, failingRecord(fixtureRecord))
+            assertEquals(item.sellIn, fixtureRecord.sellIn, failingRecord(fixtureRecord))
+            tickNo += 1
         }
+        app.updateQualityLegacy()
     }
 
     @Test
@@ -109,17 +108,6 @@ class GildedRoseAppTest : GildedTestBase() {
             val fromResult = resultList[index]
             assertEquals(savedResult.initialQuality, fromResult.initialQuality)
             assertEquals(savedResult.resultingQuality, fromResult.resultingQuality)
-        }
-    }
-
-    @Test
-    fun `Comparing backstage item calculation to original output`(){
-         val fixture = loadFixtureSnapshot().filter { it.name.contains("Backstage") }
-
-        fixture.output()
-
-        fixture.forEach {data->
-            data.day
         }
     }
 

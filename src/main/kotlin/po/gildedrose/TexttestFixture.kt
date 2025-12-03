@@ -10,26 +10,31 @@ import po.misc.types.token.isSubclassOf
 private fun  runMain(
     args: Array<String>,
     useItems: List<ItemRecord>?,
-    onCalculated: ((FixtureData)-> Unit)?){
+    useApp: GildedRose<GRItem>? = null,
+    beforeCalculated: ((FixtureData)-> Unit)? = null
+){
 
     println("OMGHAI!")
 
-    val items= listOf(
-        Item("+5 Dexterity Vest", 10, 20), //
-        Item("Aged Brie", 2, 0), //
-        Item("Elixir of the Mongoose", 5, 7), //
-        Item("Sulfuras, Hand of Ragnaros", 0, 80), //
-        Item("Sulfuras, Hand of Ragnaros", -1, 80),
-        Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-        Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
-        Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
-        // this conjured item does not work properly yet
-        Item("Conjured Mana Cake", 3, 6)
-    )
-    val app = if (useItems == null){
-        GildedRose(items.toGRItems())
-    }else{
-        GildedRose(useItems)
+
+    val app = useApp?:run {
+        if (useItems == null) {
+            val items = listOf(
+                Item("+5 Dexterity Vest", 10, 20), //
+                Item("Aged Brie", 2, 0), //
+                Item("Elixir of the Mongoose", 5, 7), //
+                Item("Sulfuras, Hand of Ragnaros", 0, 80), //
+                Item("Sulfuras, Hand of Ragnaros", -1, 80),
+                Item("Backstage passes to a TAFKAL80ETC concert", 15, 20),
+                Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
+                Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
+                // this conjured item does not work properly yet
+                Item("Conjured Mana Cake", 3, 6)
+            )
+            GildedRose(items.toGRItems())
+        } else {
+            GildedRose(useItems)
+        }
     }
 
     var days = 2
@@ -39,8 +44,8 @@ private fun  runMain(
     for (i in 0..days - 1) {
         println("-------- day $i --------")
         println("name, sellIn, quality")
-        for (item in items) {
-            onCalculated?.let {
+        for (item in app.items) {
+            beforeCalculated?.let {
                 val data = FixtureData(day = i, name = item.name, sellIn = item.sellIn, quality = item.quality)
                 it.invoke(data)
             }
@@ -54,14 +59,17 @@ private fun  runMain(
 fun main(
     numberOfDays: Int,
     useItems: List<GRItem>,
-    onCalculated: ((FixtureData)-> Unit)?
-) = runMain(arrayOf(numberOfDays.toString()), useItems, onCalculated)
+    beforeCalculated: ((FixtureData)-> Unit)?
+) = runMain(arrayOf(numberOfDays.toString()), useItems, beforeCalculated = beforeCalculated)
 
 
-fun main(numberOfDays: Int , onCalculated: (FixtureData)-> Unit) =
-    runMain(arrayOf(numberOfDays.toString()), useItems = null,  onCalculated = onCalculated)
+fun main(numberOfDays: Int, beforeCalculated: (FixtureData)-> Unit) =
+    runMain(arrayOf(numberOfDays.toString()), useItems = null,  beforeCalculated = beforeCalculated)
 
-fun main(args: Array<String>) = runMain(args, useItems = null,  onCalculated = null)
+fun main(numberOfDays: Int, app: GildedRose<GRItem>,  beforeCalculated: ((FixtureData)-> Unit)? = null) =
+    runMain(arrayOf(numberOfDays.toString()), useItems = null, useApp = app, beforeCalculated = beforeCalculated)
+
+fun main(args: Array<String>) = runMain(args, useItems = null)
 
 
 
