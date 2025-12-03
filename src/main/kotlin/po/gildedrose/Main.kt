@@ -5,8 +5,7 @@ import po.gildedrose.refactor.item.GRItem
 import po.gildedrose.refactor.item.ItemRecord
 import po.gildedrose.refactor.item.toGRItems
 import po.misc.data.output.output
-import po.misc.types.token.TypeToken
-import kotlin.collections.get
+
 
 private fun  runMain(
     args: Array<String>,
@@ -50,7 +49,7 @@ fun printHelp() {
         """
         Commands:
           run <days>                   - run using default items
-          run <days> pretty            - run using default items
+          run <days> pretty            - run using default items and pretty console printout
           exit                         - quit program
         """.trimIndent()
     )
