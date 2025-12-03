@@ -122,6 +122,8 @@ fun main(numberOfDays: Int, beforeCalculated: (FixtureData)-> Unit) =
 fun main(numberOfDays: Int, app: GildedRose<GRItem>,  beforeCalculated: ((FixtureData)-> Unit)? = null) =
     runMain(arrayOf(numberOfDays.toString()), useItems = null, useApp = app, beforeCalculated = beforeCalculated)
 
+
+
 //fun main(args: Array<String>) = runMain(args, useItems = null)
 
 fun main(){

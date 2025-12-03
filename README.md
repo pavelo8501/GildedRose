@@ -22,10 +22,17 @@ This kata is designed to practice refactoring legacy code while preserving its b
     ./gradlew build
 ```
 
-## Run the Text Fixture from Command-Line
+## Run the Text Fixture from Command-Line with gradle
+
+Uncomment this line in Main.kt
+```kotlin
+    fun main(args: Array<String>) = runMain(args, useItems = null)
 
 ```
+
+ ```
 ./gradlew -q text
+
 ```
 
 ### Specify Number of Days

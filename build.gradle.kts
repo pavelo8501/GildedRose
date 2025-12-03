@@ -51,7 +51,7 @@ tasks.test {
 tasks.register<JavaExec>("texttest") {
 	description = "Allow you to run text-based approval tests with texttest"
 	group = JavaBasePlugin.BUILD_TASK_NAME
-	mainClass.set("com.gildedrose.Main")
+	mainClass.set("po.gildedrose.MainKt")
 	classpath = sourceSets["test"].runtimeClasspath
 	args("30")
 }
