@@ -44,20 +44,27 @@ tasks.test {
 tasks.register<JavaExec>("texttest") {
 	description = "Allow you to run text-based approval tests with texttest"
 	group = JavaBasePlugin.BUILD_TASK_NAME
-	mainClass.set("com.gildedrose.TexttestFixtureKt")
+	mainClass.set("com.gildedrose.Main")
 	classpath = sourceSets["test"].runtimeClasspath
 	args("30")
 }
 
 application {
-	mainClass.set("po.gildedrose.TexttestFixtureKt")
+	mainClass.set("po.gildedrose.MainKt")
+}
+
+java {
+    withSourcesJar()
+    withJavadocJar()
 }
 
 tasks.shadowJar {
+    dependsOn(tasks.test)
     archiveBaseName.set("gildedrose")
     archiveVersion.set("")
     archiveClassifier.set("")
     mergeServiceFiles()
+
     manifest {
         attributes["Main-Class"] = "po.gildedrose.MainKt"
     }
