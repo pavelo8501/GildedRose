@@ -2,8 +2,9 @@ package po.gildedrose.refactor.reporting
 
 import po.gildedrose.refactor.item.ItemRecord
 import po.misc.data.PrettyPrint
+import po.misc.data.appendGroup
 import po.misc.data.pretty_print.grid.buildPrettyGrid
-import po.misc.data.strings.appendGroup
+
 
 
 class ReportRecord(
@@ -25,8 +26,9 @@ class ReportRecord(
     override fun toString(): String {
        return buildString {
             append("ReportRecord")
-            appendGroup('[', ']', ::day, ::itemName, ::qualityFrom, ::qualityTo)
-        }
+            appendGroup("[", "]", ::day, ::itemName, ::qualityFrom, ::qualityTo)
+
+         }
     }
     companion object{
         val reportTemplate = buildPrettyGrid<ReportRecord> {

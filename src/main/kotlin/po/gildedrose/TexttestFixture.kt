@@ -1,10 +1,7 @@
 package po.gildedrose
 
 import po.gildedrose.models.FixtureData
-import po.gildedrose.refactor.item.GRItem
-import po.gildedrose.refactor.item.ItemRecord
 import po.gildedrose.refactor.item.toGRItems
-import po.misc.types.token.isSubclassOf
 
 
 

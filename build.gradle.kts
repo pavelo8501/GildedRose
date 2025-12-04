@@ -1,9 +1,10 @@
 
 val kotlinVersion: String by project
-val funHelpersVersion:String by project
 val serializationVersion: String by project
 val kotlinReflectVersion: String by project
 val junitVersion: String by project
+val coroutinesVersion :String by project
+val typesafeVersion: String by project
 
 plugins {
     kotlin("jvm") version "2.2.0"
@@ -17,14 +18,7 @@ version = "1.0-SNAPSHOT"
 
 repositories {
 	mavenCentral()
-    maven {
-        name = "PublicGitHubPackages"
-        url = uri("https://maven.pkg.github.com/pavelo8501/ReKotlin")
-        credentials {
-            username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_USERNAME")
-            password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
-        }
-    }
+    mavenLocal()
 }
 
 kotlin {
@@ -35,7 +29,8 @@ dependencies {
 	implementation(kotlin("stdlib"))
     implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinReflectVersion}")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${serializationVersion}")
-    api("po.misc:funhelpers:1.0.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutinesVersion}")
+    implementation("com.typesafe:config:${typesafeVersion}")
 
     testImplementation("org.jetbrains.kotlin:kotlin-test:${kotlinVersion}")
     testImplementation("org.junit.jupiter:junit-jupiter:${junitVersion}")

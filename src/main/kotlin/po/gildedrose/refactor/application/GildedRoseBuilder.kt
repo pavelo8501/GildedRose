@@ -2,8 +2,6 @@ package po.gildedrose.refactor.application
 
 import po.gildedrose.refactor.item.ItemRecord
 import po.gildedrose.refactor.reporting.ReportEngine
-import po.misc.callbacks.signal.signalOf
-import po.misc.functions.NoResult
 import po.misc.types.token.TypeToken
 
 

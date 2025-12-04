@@ -7,7 +7,7 @@ import kotlinx.serialization.json.Json
 import po.gildedrose.GildedRose
 import po.gildedrose.Item
 import po.gildedrose.refactor.item.GRItem
-import po.misc.data.strings.appendGroup
+import po.misc.data.appendGroup
 
 
 abstract class GildedTestBase {
@@ -53,7 +53,7 @@ abstract class GildedTestBase {
         override fun toString(): String {
            return buildString {
                 append(conditionName)
-                appendGroup('[', ']', ::initialQuality, ::resultingQuality,::difference)
+                appendGroup("[", "]", ::initialQuality, ::resultingQuality,::difference)
             }
         }
     }

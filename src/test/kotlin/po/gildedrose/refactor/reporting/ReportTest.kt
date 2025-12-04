@@ -3,14 +3,11 @@ package po.gildedrose.refactor.reporting
 
 import po.gildedrose.refactor.ItemGroup
 import po.gildedrose.refactor.item.GRItem
-import po.gildedrose.refactor.item.toGRItem
 import po.gildedrose.refactor.item.toGRItems
 import po.gildedrose.setup.GildedTestBase
-import po.misc.data.output.output
 import po.misc.types.token.TypeToken
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertNotEquals
 import kotlin.test.assertNotNull
 
 class ReportTest : GildedTestBase(){

@@ -4,7 +4,8 @@ import kotlinx.serialization.Serializable
 import kotlinx.serialization.Transient
 import po.gildedrose.Item
 import po.gildedrose.refactor.ItemGroup
-import po.misc.data.strings.appendGroup
+import po.misc.data.appendGroup
+
 
 /**
  * A Gilded Rose domain wrapper that adapts the original [Item] class into the
@@ -75,7 +76,7 @@ class GRItem(
     override fun toString(): String {
        return buildString {
             append("GRItem")
-            appendGroup('[', ']', ::id, ::name, ::quality, ::sellIn)
+            appendGroup("[", "]", ::id, ::name, ::quality, ::sellIn)
         }
     }
     companion object{
